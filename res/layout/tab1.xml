@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- main tab -->
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:id="@+id/mainTabLayout" android:orientation="vertical"
+		android:paddingLeft="5dip" android:paddingRight="5dip"
+		android:paddingTop="5dip">
+
+
+
+		<!-- connect button -->
+		<Button android:id="@+id/Connect_Button" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:textStyle="bold"
+			android:text="@string/main_buttonlabel_connect" android:onClick="@string/main_ButtonHandler">
+		</Button>
+
+		<!-- disconnect button -->
+		<Button android:id="@+id/Disconnect_Button"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:text="@string/main_buttonlabel_disconnect" android:textStyle="bold"
+			android:onClick="@string/main_ButtonHandler">
+		</Button>
+
+		<!-- publish device characteristics button -->
+		<Button android:id="@+id/PublishDeviceCharacteristics_Button"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="@string/main_buttonlabel_publishdevicecharacteristics"
+			android:onClick="@string/main_ButtonHandler">
+		</Button>
+
+		<!-- subscribe button 
+		<Button android:id="@+id/Subscribe_Button"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:textStyle="bold" android:text="@string/main_buttonlabel_subscribe"
+			android:onClick="@string/main_ButtonHandler">
+		</Button>-->
+
+		<!-- poll button 
+		<Button android:id="@+id/Poll_Button" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:textStyle="bold"
+			android:text="@string/main_buttonlabel_poll" android:onClick="@string/main_ButtonHandler">
+		</Button>-->
+		
+		<!-- status message -->
+		<!--  TextView android:id="@+id/RequestStatusLabel_TextView"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/main_label_status_message" android:textColor="@color/stsColor">
+		</TextView-->
+		
+		<EditText android:id="@+id/RequestStatus_EditText"
+			android:layout_width="fill_parent" android:layout_height="270dp"
+			android:textColor="@color/lblColor" 
+			android:cursorVisible="false" android:gravity="top"
+			android:scrollbars="vertical" android:layout_marginTop="10px"
+			android:layout_marginLeft="2px" android:layout_marginRight="2px"
+			android:inputType="textMultiLine|textNoSuggestions" android:clickable="false"
+			android:focusable="false">
+		</EditText>
+		
+	
+		
+		<!-- "currently not used" buttons -->
+		<!--  Button android:id="@+id/Search_Button" android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/main_buttonlabel_search" 
+			android:onClick="@string/main_ButtonHandler">
+		</Button -->
+		
+		<!--Button android:id="@+id/EnduranceTest_Button" android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/main_buttonlabel_endurancetest" 
+			android:onClick="@string/main_ButtonHandler">
+		</Button -->
+		
+		<!-- Button android:id="@+id/Location_Button" android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/main_buttonlabel_location" 
+			android:onClick="@string/main_ButtonHandler">
+		</Button -->
+		<!-- Button android:id="@+id/Purge_Button" android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" android:text="@string/main_buttonlabel_purge" 
+			android:textStyle="bold" android:onClick="@string/main_ButtonHandler">
+		</Button -->
+		<!--Button android:id="@+id/PublishUpdateIdentity_Button" android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" android:textStyle="bold" android:text="@string/main_buttonlabel_publishupdateidentity" 
+			android:onClick="@string/main_ButtonHandler">
+		</Button -->
+	</LinearLayout>

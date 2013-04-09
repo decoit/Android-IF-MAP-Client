@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- main tab -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/ScrollViewTab3" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:fillViewport="true">
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:id="@+id/statusTabLayout" android:orientation="vertical"
+		android:paddingLeft="5dip" android:paddingRight="5dip"
+		android:paddingTop="5dip" >
+		
+		<!-- Device Properties -->
+		<ListView android:id="@+id/status_ListView"
+			android:layout_width="fill_parent" android:layout_height="1800dip"
+			android:minHeight="?android:attr/listPreferredItemHeight"
+			android:textAppearance="?android:attr/textAppearanceLarge"></ListView>
+
+		<!-- Location properties -->
+		<TextView android:id="@+id/LongitudeLabel_TextView"
+			android:layout_width="1dip" android:layout_height="1dip"
+			android:textStyle="bold" android:visibility="invisible"></TextView>
+		<TextView android:id="@+id/LatitudeLabel_TextView"
+			android:layout_width="1dip" android:layout_height="1dip"
+			android:textStyle="bold" android:visibility="invisible"></TextView>
+		<TextView android:id="@+id/AltitudeLabel_TextView"
+			android:layout_width="1dip" android:layout_height="1dip"
+			android:textStyle="bold" android:visibility="invisible"></TextView>
+		
+		<!--ListView android:id="@+id/status_ListView2"
+			android:layout_width="fill_parent" android:layout_height="180dip"
+			android:minHeight="?android:attr/listPreferredItemHeight"
+			android:textAppearance="?android:attr/textAppearanceLarge"></ListView -->
+				
+		<!-- update all button -->
+		<Button android:id="@+id/UpdateStatus_Button"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:textStyle="bold" android:text="update status information"
+			android:onClick="updateStatusButtonHandler"></Button>
+
+	</LinearLayout>
+		
+	
+</ScrollView>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	
+	<string name="app_name">IFMAP-Client</string>
+
+	<!-- Colors -->
+	<color name="bgrColor">#666666</color>
+	<color name="lblColor">#000000</color>
+	<color name="stsColor">#FFFFFF</color>
+
+	<!--  Tab Layout -->
+	<string name="tablayout_tabname_mainactivty">Main</string>
+	<string name="tablayout_tabname_setupactivity">Setup</string>
+	<string name="tablayout_tabname_statusactivity">Status</string>
+	<string name="tablayout_tabname_logactivity">Logging</string>
+	<string name="tablayout_tabname_aboutactivity">About</string>
+	
+	<!-- Main-Tab -->
+	<string name="main_buttonlabel_connect">Start Session</string>
+	<string name="main_buttonlabel_disconnect">End Session</string>
+	<string name="main_buttonlabel_publishdevicecharacteristics">Publish device characteristics</string>
+	<string name="main_buttonlabel_subscribe">Subscribe to IP-Identifier</string>
+	<string name="main_buttonlabel_poll">Send a Poll Request</string>
+	<string name="main_buttonlabel_search">Search last location</string>
+	<string name="main_ButtonHandler">mainTabButtonHandler</string>
+	<string name="main_default_wrongconfig_message">error while validating preferences...please check them</string>
+	<string name="main_default_connectiontimeout_message">Connection Timeout - No Response from MAP-Server!</string>
+	<string name="main_progressbar_message_srcrequest_1">Please Wait...</string>
+	<string name="main_progressbar_message_srcrequest_2">Executing Request</string>
+	<string name="main_label_status_message">Status Message:</string>
+	<string name="main_default_status_message">Waiting for User Input</string>
+	<string name="main_status_message_prefix">[msg]</string>
+	<string name="main_status_message_errorprefix">[error]</string>
+	
+	<!-- Strings from Message-Handler that will be shown in Main-Status-Output-Textfield -->
+	<string name="messagehandler_mainstatus_message_newsession">new session established</string>
+	<string name="messagehandler_mainstatus_message_renewsession">session renewed</string>
+	<string name="messagehandler_mainstatus_message_devicecharacteristics">device characteristics published</string>
+	<string name="messagehandler_mainstatus_message_location">metadata-update published</string>
+	<string name="messagehandler_mainstatus_message_endsession">session closed</string>
+	<string name="messagehandler_mainstatus_message_invalidresponse">invalid response from server</string>
+
+	<!-- Preferences-Tab -->
+	<string name="perferences_summary_nonconformdata">Publish esukom-specific metadata. This Option currently does not work (and has no effect) on devices running android versions prior 4.0 </string>
+	<string name="perferences_summary_sendesukomspecificapps">When publishing esukom-specific metadata, dont send informations about installed applications. Improves performance.</string>
+	<string name="perferences_summary_dontsendgoogleapps">Exclude google/android applications from publishing application information</string>
+	<string name="perferences_summary_autostart">Application will be automatically started after device finished booting. Currently, this option does not work on android 4.0 and above</string>
+	<string name="perferences_summary_autoconnect">Automatically connect to MAP-Server at startup</string>
+	<string name="preferences_summary_serverip">IP-Address of the target MAP-Server</string>
+	<string name="preferences_summary_serverport">Port Number of the target MAP-Server</string>
+	<string name="preferences_summary_username">Username for basic authentication</string>
+	<string name="preferences_summary_password">Password for basic authentication</string>
+	<string name="preferences_summary_allowunsafe">Allow "unsafe" SSL-Connection. When activated, the peer-certificate-check will be skipped. Recommended for testing and debugging.</string>
+	<string name="preferences_summary_basicauth">Use basic-authentication mode. Requires username and password. If disabled, make sure that your peer knows about your certificate!</string>
+	<string name="preferences_summary_logpublishcharacteristics">Enable logging of publish-characteristics messages</string>
+	<string name="preferences_summary_renewinterval">Interval for sending renew-session request to MAP-Server (in milliseconds)</string>
+	<string name="preferences_summary_updateinterval">Interval for sending updated metadata to Server. This includes publishing of Device-Characteristics and Location-Data. Minimum (and default) is 60000 ms (1 minute)</string>
+	<string name="preferences_summary_disablelog">Disable logging of messages send to MAP-Server</string>
+	<string name="perferences_summary_permanentlyConnection">Enables a permanent connection with the MAP-Server. If disabled, the client will periodically send "renew" requests to keep the session alive.</string>
+	<string name="preferences_summary_locationTracking">Enables location-tracking</string>
+	<string name="preferences_summary_locationForm">Switch between Cell-Based or GPS-Based Location-Tracking</string>
+	<string name="preferences_summary_logrenewrequest">Enable logging of renew-request messages</string>
+	<string name="preferences_summary_lognewsessionrequest">Enable logging of new-session-/end-session messages</string>
+	<string name="preferences_summary_logpollrequest">Enable logging of poll-request messages</string>
+	<string name="preferences_summary_logsubscribe">Enable logging of subscription messages</string>
+	<string name="preferences_summary_loglocationtracking">Enable logging of metadata-update messages</string>
+	<string name="preferences_summary_logerrormessage">Enable logging of error-message messages</string>
+	<string name="preferences_summary_loginvalidresponse">Enable logging of invalid-response messages</string>
+	<string name="preferences_summary_applicationlogging">Write logging-messages to file</string>
+	<string name="preferences_summary_autoupdate">Enable autmatic publish of updated metadata</string>
+	<string name="preferences_title_nonconformdata">Use Esukom-Metadata</string>
+	<string name="preferences_title_sendesukomspecificapps">Dont send app infos</string>
+	<string name="preferences_title_dontsendgoogleapps">Dont send google-apps infos</string>
+	<string name="preferences_title_autostart">Enable auto-start</string>
+	<string name="preferences_title_autoconnect">Enable auto-connect</string>
+	<string name="preferences_title_serverip">Server IP-Address</string>
+	<string name="preferences_title_serverport">Server Port-Number</string>
+	<string name="preferences_title_username">Username</string>
+	<string name="preferences_title_password">Password</string>
+	<string name="preferences_title_allowunsafe">allow unsafe SSL</string>
+	<string name="preferences_title_basicauth">Basic Authentication</string>
+	<string name="preferences_title_renewinterval">Renew-Request Interval</string>
+	<string name="preferences_title_permanentlyConnection">Connection-Type</string>
+	<string name="preferences_title_locationTracking">Enable Location-Tracking</string>
+	<string name="preferences_title_updateinterval">Auto-Update Interval</string>
+	<string name="preferences_title_locationPref">Location-Tracking-Mode</string>
+	<string name="preferences_title_cell">Location-Tracking using cellbroadcast</string>
+	<string name="preferences_title_disablelog">Disable logging</string>
+	<string name="preferences_title_applicationlogging">Log to file</string>	
+	<string name="preferences_title_logrenewrequest">Enable renew-session logging</string>
+	<string name="preferences_title_lognewsessionrequest">Enable new/end-session logging</string>
+	<string name="preferences_title_logsubscripe">Enable subscription Logging</string>
+	<string name="preferences_title_logsearch">Enable search logging</string>
+	<string name="preferences_title_loglocationtracking">Enable auto-update logging</string>
+	<string name="preferences_title_logdeletelocation">Enable delete-location logging</string>
+	<string name="preferences_title_logpublishcharacteristics">Enable publish-characteristics logging</string>
+	<string name="preferences_title_logerrormessage">Enable error-message logging</string>
+	<string name="preferences_title_loginvalidresponse">Enable invalid-response logging</string>	
+	<string name="preferences_title_autoupdate">Enable auto-update</string>	
+
+	<!--Status-Tab -->
+	<string name="status_default_undetected">not detected</string>
+	<string name="status_label_deviceproperties">Device Properties</string>
+	<string name="status_label_locationproperties">Location Properties</string>
+	<string name="status_label_applicationproperties">Application Properties</string>
+	<string name="status_label_installedapps">Installed Applications</string>
+	<string name="status_label_permissions">Permissions</string>
+	<string name="info_label_value_ip">IP-Address: </string>
+	<string name="info_label_value_mac">MAC-Address: </string>
+	<string name="info_label_value_cpu_load">CPU-Load: </string>
+	<string name="info_label_value_ram_free">Free Ram: </string>
+	<string name="info_label_value_process_count">Process Count: </string>
+	<string name="info_label_value_running_process_names">Running Processes Details: </string>
+	<string name="info_label_value_deviceimei">IMEI: </string>
+	<string name="info_label_value_deviceimsi">IMSI: </string>
+	<string name="info_label_value_kernelversion">Kernel-Version: </string>
+	<string name="info_label_value_version">Firmware-Version: </string>
+	<string name="info_label_value_buildnumber">Build-Number: </string>
+	<string name="info_label_value_basebandversion">Baseband-Version: </string>
+	<string name="info_label_value_branding">Device-Branding: </string>
+	<string name="info_label_value_manufacturer">Device-Manufacturer: </string>
+	<string name="info_label_value_phonenumber">Device-Phonenumber: </string>
+	<string name="info_label_value_smscount">SMS-Count(incoming): </string>
+	<string name="info_label_value_smscount_out">SMS-Count(outgoing): </string>
+	<string name="info_label_value_smscount_lastsend">Last SMS sent at: </string>
+	<string name="info_label_value_camera_lastused">Last Camera use: </string>
+	<string name="info_label_value_bluetooth">Bluetooth:</string>
+	<string name="info_label_value_microphone">Microphone:</string>
+	<string name="info_label_value_battery">Battery Status:</string>
+	<string name="info_label_value_received_total_bytes">Received KBytes:</string>
+	<string name="info_label_value_transferred_total_bytes">Transferred KBytes:</string>
+	<string name="info_label_longitude">Longitude: </string>
+	<string name="info_label_latitude">Latitude: </string>
+	<string name="info_label_altitude">Altitude: </string>	
+	<string name="info_label_apps">Applications: </string>
+	<string name="info_label_appswithperms">Application Details: </string>
+	<string name="info_label_perms">Permissions: </string>	
+	<string name="status_ButtonHandler">statusTabButtonHandler</string>
+	<string name="status_DialogBox_label">Applications Properties</string>
+	
+	
+	<!-- Log-Message-Dialog -->
+	<string name="log_msgDialogBox_label">Message Content</string>
+	
+	<!-- About-Info-Tab -->
+	<string name="info_name">Android IF-MAP Client</string>
+	<string name="info_version">Version 0.1.6</string>
+	<string name="info_copyright">(c) 2012 Decoit GmbH</string>
+	<string name="info_license">Released under Apache License, Version 2.0</string>
+	<string name="info_label_openwebsite">Visit DECOIT Homepage</string>
+	<string name="info_ButtonHandler">infoTabButtonHandler</string>
+	
+	<!-- toast messages -->
+	<string name="service_connected_toastmsg">Sending Poll to ARC-Channel</string>
+	<string name="service_disconnect_toastmsg">Received Message from ARC</string>
+	
+	<!--  options-menu -->
+	<string name="quit_app">Quit</string>
+	
+	<!-- notification messages -->
+	<string name="notification_initial_messgae">IF-MAP-Client initialized</string>
+	<string name="notification_initial_label">IF-MAP-Client started</string>
+	<string name="main_notification_message_label">Incoming MAPS-Response</string>
+	<string name="main_notification_message_message">Response Message from SRC</string>
+	
+	<!-- error messages -->
+	<string name="serialized_response_errormsg_null">no connection object found</string>
+	<string name="serialized_response_errormsg_connection_refused">connection refused</string>
+	<string name="serialized_response_errormsg_time_out">connection timed out</string>
+	<string name="serialized_response_errormsg_server_not_responding">server is not responding</string>
+	<string name="serialized_response_errormsg_io_error">io-error occured</string>
+	<string name="serialized_response_errormsg_Unauthorized">client is not authorized</string>
+	<string name="serialized_response_errormsg_other">unknown error occured</string>
+	<string name="serialized_response_errormsg_unreachable">target network is unreachable</string>
+	<string name="serialized_response_errormsg_forbidden">HTTP Code 403 - Forbidden</string>
+	
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="preferences_display_locationForm">
+		<item>Locationtracking with GPS</item>
+		<item>Locationtracking with Cellbroadcast</item>
+	</string-array>
+	<string-array name="preferences_value_locationForm">
+		<item>GPS</item>
+		<item>Cellbroadcast</item>
+	</string-array>
+	
+</resources>

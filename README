@@ -1,0 +1,210 @@
++-----------------------------------------------------+
+|           Androif-IfMap-Client Version 0.1.6.2      |
++-----------------------------------------------------+
+
+Content:
+1) Credits
+2) License
+3) Setup/Installation
+   a) installation
+   b) configuring
+   c) running
+4) known issues/TODOs
+5) additional Notes
+6) Changelog
+
+
+1 - Credits:
+------------
+Developed within the ESUKOM-Project between 2011 and 2012 by Decoit GmbH (http://www.decoit.de/)
+More Information can be found on the ESUKOM-Project Website (http://www.esukom.de/)
+
+
+2 - License:
+------------
+2012 Decoit GmbH
+
+Licensed to the Apache Software Foundation (ASF) under one   
+or more contributor license agreements.  See the NOTICE file  
+distributed with this work for additional information         
+regarding copyright ownership.  The ASF licenses this file    
+to you under the Apache License, Version 2.0 (the            
+"License"); you may not use this file except in compliance    
+with the License.  You may obtain a copy of the License at    
+                                                               
+http://www.apache.org/licenses/LICENSE-2.0                   
+                                                               
+Unless required by applicable law or agreed to in writing,    
+software distributed under the License is distributed on an  
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY        
+KIND, either express or implied.  See the License for the     
+specific language governing permissions and limitations     
+
+
+3 - Setup/Installation:
+-----------------------
+
+a) installation
+In order to install the Android Client, just use the .apk file that comes with
+this package. Information about how to install apk files on your device can
+be found here: http://www.brighthub.com/mobile/google-android/articles/37151.aspx  
+If you need to uninstall/reinstall, this could also be interesting:
+http://stackoverflow.com/questions/5608540/android-uninstall-failed-adb-uninstall
+
+b) configuring
+Before you can use the AndroidIfMapClient, you have to set some Preferences. This
+can be done inside the Preferences-Tab. The different Options are explained there.
+
+c) running
+Currently, the AndroidIfMapClient can run in 2 different modes: Manual-Update or Auto-Update-Mode.
+You can switch between both modes by enabling/disabling "Enable auto-update" inside the 
+Preferences-Tab. In Manual Mode, you can publish Device-Characteristics by using the related
+Button inside the Main-Tab. In Auto-Update-Mode, this button will be disabled and the 
+AndroidIfMapClient will send this data automatically in the Intervall set inside the
+Preference-Tab.
+
+
+4 - TODOs:
+----------
+   
+-> VPN is supported, but the Connection has to be established with the Android
+   "Native"-VPN-Client. You can do that by bringing the AndroidIfMapClient to the
+   background, connect to VPN via native Android-VPN-Client and reopen the 
+   AndroidIfMapClient afterwards. If you look under "Status"-Tab, you should see 
+   the new assigned IP from the established VPN-Connection. In future versions, 
+   an integrated VPN-Menu may be implemented
+   
+   
+5 - additional Notes:
+---------------------
+currently there are no additional notes 
+   
+
+6 - Changelog:
+--------------
+Version 0.1.1:
+
+-> The Time-Period for a Connection-Timeout in Async-Connection-Handling has been
+   raised to avoid Timeout while waiting for incomming Poll-Response
+   
+-> Handling and Logging of Invalid Server Responses
+
+-> Bugfixes inside Logging-Component: Poll Request now gets logged correctly 
+
+-> Polling for changed DeviceProperties and for Location-Metadata
+   The Label of the relevant Button has also been changed
+   
+   
+Version 0.1.2:
+
+-> Bugfixes in Polling-Mechanism while running the application in "renew-session-mode"
+
+-> Bugfix: Error-Response-Messages from MAP-Server are now detected correctly
+
+-> added icons for application and notifications
+
+
+Version 0.1.3:
+
+-> Logging of new-session-requests can now be deactivated in setup-menu
+
+-> In some cases, the automatic change of the screen when the devices orientation
+   changes can lead to crashes. For now, it has been deactivated
+   
+-> Location-Tracking: the interval for detecting and sending the current device-location
+   is much more precise now.
+   
+-> Some minor Bugfixes
+
+
+Version 0.1.32:
+
+-> fixed a major bug within the location-tracking-component
+
+-> fixed some polling-problems that occurs when renew-Session is activated
+
+-> extended logging-functions: setup now offers options to turn on/off logging 
+   of specific message-types, also the log-messages can now be exported as text-file
+   
+-> application logging: setup now offers options to turn on/off logging 
+   application-wide logging in text-file
+   
+-> some gui-related changes
+
+-> some minor bugfixes 
+
+
+Version 0.1.34:
+
+-> changed the messaging-layer, now using the ifmapj 0.1.2 library from trust@fh-hannover
+   for communication-handling   
+   
+   
+Version 0.1.4:
+
+-> using ifmapj 0.1.3 from trust@fh-hannover for communication handling
+
+-> removed subscripe and poll functionality because they are no longer used for the esukom project
+   if you need them, you can uncomment them inside the source code
+   
+-> added option for publishing standard-conform/non-standard-conform metadata. Non-Stanard-Metadata 
+   includes: branding, bluetooth, imei, imsi, phone-number, microphone
+   
+-> publishing device-characteristics now also leads to a publish of a device-identifier (as according
+   to the ifmap-specification) 
+     
+-> minor bug-fixes
+
+
+Version 0.1.5:
+
+-> Using ifmapj 0.1.4 from trust@fh-hannover for communication handling
+
+-> Implemented "use unsafe ssl"-option which can be used for debugging and testing
+
+-> Fixed order of device-characteristics metadata which has lead to some problems when
+   map-servers uses schema-validation
+   
+-> Added new device-properties for publishing: CPULoad, FreeRam, Battery-Status, Process-Count,
+   Permission-list, Running-Process-List, Kernel-Version, Build-Number, Baseband-Version, Battery-Status
+   
+-> Added "refresh"-button for Status-Tab that updates all values inside this tab
+
+-> Added autostart-option, which automatically starts the Android-Client when system has finished booting up.
+   This option currently does not work under ICS (4.0.X)
+   
+-> Added autoconnect-option, which leads to an initial new-session-request as soon as the Android-Client has
+   been started
+   
+-> Its now possible to send esukom-specific-metadata which is used within the esukom-project
+
+-> Changed button behaviour: the back Button does not close the Android-Client anymore but brings
+   it to the background. To quit the Android-Client, use the "quit"-option inside the menu 
+
+
+Version 0.1.6:
+
+-> Changed published Permissions: Granted/Requires 
+
+-> Fixed Bug when posting applications and their permissions
+
+-> Added Transfered/Received Bytes in Status-Tab
+
+-> Added / Reimplmented SMS-Received Functionality
+
+-> Added last camera use in status-tab and in publish
+
+-> Republish esukom-specific-metadata if location has changed
+
+-> Added auto-publish mode for device- and location-data 
+
+
+Version 0.1.6.1:
+
+-> Added Installer-Package-Feature-Metadata when publishing in esukom-mode
+   
+
+Version 0.1.6.2:
+
+-> Device-Identifer has now the device-MAC-Address as value. This is required
+   in order to work with the Detection-Engine

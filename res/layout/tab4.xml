@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:id="@+id/log_tab" android:orientation="vertical"
+	android:paddingTop="5px">
+
+
+
+	<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+		android:text="@string/info_name" android:textColor="@color/lblColor"
+		android:textAppearance="@color/bgrColor" android:textStyle="bold"
+		android:typeface="normal"></TextView>
+
+
+	<TextView android:id="@+id/TextView02" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+		android:text="@string/info_version" android:textColor="@color/lblColor"
+		android:textAppearance="@color/bgrColor" android:textStyle="normal"
+		android:typeface="normal" android:paddingTop="10px"></TextView>
+
+<!--  ImageView android:id="@+id/ImageView01"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:background="@drawable/esukom_logo_full"
+		android:layout_gravity="center_horizontal" android:paddingTop="10px"></ImageView-->
+		
+	<TextView android:id="@+id/TextView03" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+		android:text="@string/info_copyright" android:textColor="@color/lblColor"
+		android:textAppearance="@color/bgrColor" android:textStyle="normal"
+		android:typeface="normal" android:paddingTop="10px" android:paddingBottom="10px"></TextView>
+
+	
+
+	<ImageView android:id="@+id/ImageView02"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:background="@drawable/decoit_logo_full"
+		android:layout_gravity="center_horizontal" android:paddingTop="10px"></ImageView>
+
+	<TextView android:id="@+id/TextView03" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+		android:text="@string/info_license" android:textColor="@color/lblColor"
+		android:textAppearance="@color/bgrColor" android:textStyle="italic"
+		android:typeface="normal" android:paddingTop="10px"
+		android:paddingBottom="20px"></TextView>
+		
+			<Button android:id="@+id/OpenProjectWebsite_Button" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:textStyle="bold"
+				android:text="@string/info_label_openwebsite"
+				android:onClick="@string/info_ButtonHandler" android:layout_gravity="center_horizontal"></Button>
+</LinearLayout>
+		
