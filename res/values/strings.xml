@@ -169,9 +169,9 @@
 	<string name="serialized_response_errormsg_connection_refused">connection refused</string>
 	<string name="serialized_response_errormsg_time_out">connection timed out</string>
 	<string name="serialized_response_errormsg_server_not_responding">server is not responding</string>
-	<string name="serialized_response_errormsg_io_error">io-error occured</string>
+	<string name="serialized_response_errormsg_io_error">io-error occurred</string>
 	<string name="serialized_response_errormsg_Unauthorized">client is not authorized</string>
-	<string name="serialized_response_errormsg_other">unknown error occured</string>
+	<string name="serialized_response_errormsg_other">unknown error occurred</string>
 	<string name="serialized_response_errormsg_unreachable">target network is unreachable</string>
 	<string name="serialized_response_errormsg_forbidden">HTTP Code 403 - Forbidden</string>
 

@@ -221,13 +221,22 @@ public class SystemProperties {
 	 */
 	private int getTotalMemoryAmountInMB() {
 		int totalMemCalculated = 0;
+		RandomAccessFile reader = null;
 		try {
-			RandomAccessFile reader = new RandomAccessFile("/proc/meminfo", "r");
+			reader = new RandomAccessFile("/proc/meminfo", "r");
 			String totalMem = reader.readLine().replace("MemTotal:", "")
 					.replace("kB", "").replace(" ", "");
 			totalMemCalculated = Integer.parseInt(totalMem) / 1024;
 		} catch (IOException ex) {
 			ex.printStackTrace();
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+			}
 		}
 		return totalMemCalculated;
 	}
