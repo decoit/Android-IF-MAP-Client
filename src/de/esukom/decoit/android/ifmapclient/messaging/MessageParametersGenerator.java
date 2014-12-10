@@ -93,7 +93,7 @@ public class MessageParametersGenerator<T> {
     Device deviceIdentifier;
 
     // location information
-    private String mLastAltitude;
+    private String mLastLatitude;
     private String mLastLongitude;
 
     // request-type
@@ -278,7 +278,7 @@ public class MessageParametersGenerator<T> {
      * reset all mLast* values
      */
     private void restLastValues() {
-    	mLastAltitude = null;
+    	mLastLatitude = null;
     	mLastAppList = null;
     	mLastBatStat = null;
     	mLastCpuLoad = null;
@@ -356,8 +356,8 @@ public class MessageParametersGenerator<T> {
         // republish informations-flag
         boolean locationChanged = false;
         if (PreferencesValues.sEnableLocationTracking && (MainActivity.sLatitude != null && MainActivity.sLongitude != null)) {
-            if (mLastAltitude != MainActivity.sLatitude || mLastLongitude != MainActivity.sLongitude) {
-                mLastAltitude = MainActivity.sLatitude;
+            if (mLastLatitude != MainActivity.sLatitude || mLastLongitude != MainActivity.sLongitude) {
+                mLastLatitude = MainActivity.sLatitude;
                 mLastLongitude = MainActivity.sLongitude;
                 locationChanged = true;
             }
