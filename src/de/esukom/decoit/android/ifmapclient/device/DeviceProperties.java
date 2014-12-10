@@ -64,7 +64,7 @@ public class DeviceProperties {
         if (sdkVersion < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             className = "de.esukom.decoit.android.ifmapclient.device.phone.PhonePropertiesLegacy";
         } else {
-            className = "de.esukom.decoit.android.ifmapclient.device.phone.PhonePropertiesIcs";
+            className = "de.esukom.decoit.android.ifmapclient.device.phone.PhonePropertiesLatest";
         }
 
         /*
