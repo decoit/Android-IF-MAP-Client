@@ -63,7 +63,8 @@
             </intent-filter>
 	    </receiver>
 	    
-	    <receiver android:name="de.esukom.decoit.android.ifmapclient.observer.camera.CameraReceiver" android:enabled="true" >
+	    <receiver android:name="de.esukom.decoit.android.ifmapclient.observer.camera.CameraReceiver" android:enabled="true"
+			android:exported="false" >
         <intent-filter>
             <action android:name="com.android.camera.NEW_PICTURE" />
             <action android:name="android.hardware.action.NEW_PICTURE" />
