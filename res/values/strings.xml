@@ -45,7 +45,7 @@
 	<string name="perferences_summary_nonconformdata">Publish esukom-specific metadata. This Option currently does not work (and has no effect) on devices running android versions prior 4.0 </string>
 	<string name="perferences_summary_sendesukomspecificapps">When publishing esukom-specific metadata, dont send informations about installed applications. Improves performance.</string>
 	<string name="perferences_summary_dontsendgoogleapps">Exclude google/android applications from publishing application information</string>
-	<string name="perferences_summary_autostart">Application will be automatically started after device finished booting. Currently, this option does not work on android 4.0 and above</string>
+	<string name="perferences_summary_autostart">Application will be automatically started after device finished booting.</string>
 	<string name="perferences_summary_autoconnect">Automatically connect to MAP-Server at startup</string>
 	<string name="preferences_summary_serverip">IP-Address of the target MAP-Server</string>
 	<string name="preferences_summary_serverport">Port Number of the target MAP-Server</string>
