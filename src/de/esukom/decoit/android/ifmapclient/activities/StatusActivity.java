@@ -39,7 +39,7 @@ import de.esukom.decoit.android.ifmapclient.device.ListEntry;
 import de.esukom.decoit.android.ifmapclient.device.StatusMessageAdapter;
 import de.esukom.decoit.android.ifmapclient.device.system.SystemProperties;
 import de.esukom.decoit.android.ifmapclient.observer.battery.BatteryReceiver;
-import de.esukom.decoit.android.ifmapclient.observer.camera.CameraObserver;
+import de.esukom.decoit.android.ifmapclient.observer.camera.CameraReceiver;
 import de.esukom.decoit.android.ifmapclient.observer.sms.SMSObserver;
 import de.esukom.decoit.android.ifmapclient.util.Toolbox;
 
@@ -183,7 +183,7 @@ public class StatusActivity extends Activity implements OnItemClickListener {
         addValueToListEntry(getString(R.string.info_label_value_smscount), new Integer(SMSObserver.sSmsInCount).toString());
         addValueToListEntry(getString(R.string.info_label_value_smscount_out), new Integer(SMSObserver.sSmsSentCount).toString());
         addValueToListEntry(getString(R.string.info_label_value_smscount_lastsend), convertLastSentDate(SMSObserver.sLastSendDate));
-        addValueToListEntry(getString(R.string.info_label_value_camera_lastused), convertLastSentDate(CameraObserver.sLastPictureTakenDate));
+        addValueToListEntry(getString(R.string.info_label_value_camera_lastused), convertLastSentDate(CameraReceiver.sLastPictureTakenDate));
         addValueToListEntry(getString(R.string.info_label_value_bluetooth), mDeviceProperties.getPhoneProperties()
                 .getBluetoothActiveStatusString());
         addValueToListEntry(getString(R.string.info_label_value_microphone), mDeviceProperties.getPhoneProperties()
@@ -235,7 +235,7 @@ public class StatusActivity extends Activity implements OnItemClickListener {
         updateEntry(String.valueOf(SMSObserver.sSmsInCount), LIST_POSITION_DEVICE_SMSCOUNT_IN);
         updateEntry(String.valueOf(SMSObserver.sSmsSentCount), LIST_POSITION_DEVICE_SMSCOUNT_OUT);
         updateEntry(convertLastSentDate(SMSObserver.sLastSendDate), LIST_POSITION_DEVICE_SMSSENDDATE); 
-        updateEntry(convertLastSentDate(CameraObserver.sLastPictureTakenDate), LIST_POSITION_DEVICE_LASTCAMERAUSE);  
+        updateEntry(convertLastSentDate(CameraReceiver.sLastPictureTakenDate), LIST_POSITION_DEVICE_LASTCAMERAUSE);
         updateEntry(mDeviceProperties.getPhoneProperties().getBluetoothActiveStatusString(), LIST_POSITION_BLUEATOOTH_ENABLED);
         updateEntry(mDeviceProperties.getPhoneProperties().getMicrophoneActiveString(), LIST_POSITION_MICROPHONE_MUTED);
         updateEntry(BatteryReceiver.sCurrentBatteryLevel + "%", LIST_POSITION_BATTERY_LEVEL);
@@ -302,7 +302,7 @@ public class StatusActivity extends Activity implements OnItemClickListener {
             updateEntry(convertLastSentDate(SMSObserver.sLastSendDate), position);
             break;
         case LIST_POSITION_DEVICE_LASTCAMERAUSE:
-            updateEntry(convertLastSentDate(CameraObserver.sLastPictureTakenDate), position);
+            updateEntry(convertLastSentDate(CameraReceiver.sLastPictureTakenDate), position);
             break;
         case LIST_POSITION_BLUEATOOTH_ENABLED:
             String bluetoothEntryValue = mDeviceProperties.getPhoneProperties().getBluetoothActiveStatusString();

@@ -48,7 +48,7 @@ import de.esukom.decoit.android.ifmapclient.messaging.MessageHandler;
 import de.esukom.decoit.android.ifmapclient.messaging.MessageParametersGenerator;
 import de.esukom.decoit.android.ifmapclient.messaging.ResponseParameters;
 import de.esukom.decoit.android.ifmapclient.observer.battery.BatteryReceiver;
-import de.esukom.decoit.android.ifmapclient.observer.camera.CameraObserver;
+import de.esukom.decoit.android.ifmapclient.observer.camera.CameraReceiver;
 import de.esukom.decoit.android.ifmapclient.observer.location.LocationObserver;
 import de.esukom.decoit.android.ifmapclient.observer.sms.SMSObserver;
 import de.esukom.decoit.android.ifmapclient.preferences.PreferencesValues;
@@ -195,9 +195,9 @@ public class MainActivity extends Activity {
 	// observer for incoming and outgoing sms-messages
 	private SMSObserver mSmsObserver = null;
 
-	// observer for pictures taken with the camera
+	// receiver for pictures taken with the camera
 	@SuppressWarnings("unused")
-	private CameraObserver mCameraObserver = null;
+	private CameraReceiver mCameraReceiver = null;
 
 	// -------------------------------------------------------------------------
 	// ACTIVITY LIFECYCLE HANDLING
@@ -231,8 +231,8 @@ public class MainActivity extends Activity {
 		mSmsObserver.registerReceivedSmsBroadcastReceiver();
 		mSmsObserver.registerSentSmsContentObserver();
 
-		// initialize camera-observer
-		mCameraObserver = new CameraObserver("/DCIM/Camera");
+		// initialize camera-receiver
+		mCameraReceiver = new CameraReceiver();
 
 		// autoconnect to MAP-Server at Startup
 		if (mPreferences.ismAutoconnect()) {

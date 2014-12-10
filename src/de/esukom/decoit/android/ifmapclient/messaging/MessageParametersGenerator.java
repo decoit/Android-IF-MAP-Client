@@ -42,7 +42,7 @@ import de.esukom.decoit.android.ifmapclient.device.application.ApplicationListEn
 import de.esukom.decoit.android.ifmapclient.device.application.Permission;
 import de.esukom.decoit.android.ifmapclient.device.system.SystemProperties;
 import de.esukom.decoit.android.ifmapclient.observer.battery.BatteryReceiver;
-import de.esukom.decoit.android.ifmapclient.observer.camera.CameraObserver;
+import de.esukom.decoit.android.ifmapclient.observer.camera.CameraReceiver;
 import de.esukom.decoit.android.ifmapclient.observer.sms.SMSObserver;
 import de.esukom.decoit.android.ifmapclient.observer.sms.SMSObserver.SmsInfos;
 import de.esukom.decoit.android.ifmapclient.preferences.PreferencesValues;
@@ -519,7 +519,7 @@ public class MessageParametersGenerator<T> {
         // we just use that...as soon as other sensors are observed, we need a method
         // to compare the dates of the sensors that are used to find out which of them
         // was the last one in use...
-        Date lastCameraUsedDate = CameraObserver.sLastPictureTakenDate;
+        Date lastCameraUsedDate = CameraReceiver.sLastPictureTakenDate;
         if (lastCameraUsedDate != null) {
             fe = createFeature("NewPicture", time, "true", QUALI);
             addToUpdateRequest(publishRequest, mPhoneSensorCat, null, fe, MetadataLifetime.session, true);
