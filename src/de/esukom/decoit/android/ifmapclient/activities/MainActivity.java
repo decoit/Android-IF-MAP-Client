@@ -226,11 +226,6 @@ public class MainActivity extends Activity {
 		// generator for if-map-messages to be published
 		parameters = new MessageParametersGenerator<PublishRequest>();
 
-		// initialize location tracking
-		if (PreferencesValues.sEnableLocationTracking) {
-			initLocation();
-		}
-
 		// initialize sms-observing
 		mSmsObserver = new SMSObserver(getApplicationContext());
 		mSmsObserver.registerReceivedSmsBroadcastReceiver();
