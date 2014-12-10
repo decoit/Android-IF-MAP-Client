@@ -174,5 +174,12 @@
 	<string name="serialized_response_errormsg_other">unknown error occured</string>
 	<string name="serialized_response_errormsg_unreachable">target network is unreachable</string>
 	<string name="serialized_response_errormsg_forbidden">HTTP Code 403 - Forbidden</string>
+
+	<!-- location messages -->
+	<string name="location_disabled">"Location Service is disabled!"</string>
+
+	<!-- enable/cancel -->
+	<string name="enable">"Enable"</string>
+	<string name="cancel">"Cancel"</string>
 	
 </resources>

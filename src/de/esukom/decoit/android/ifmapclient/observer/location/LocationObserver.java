@@ -20,10 +20,14 @@
  */
 package de.esukom.decoit.android.ifmapclient.observer.location;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 import de.esukom.decoit.android.ifmapclient.activities.MainActivity;
+import de.esukom.decoit.android.ifmapclient.activities.R;
 
 /**
  * Location Listener Class for getting current physical Location of the Device/User
@@ -58,7 +62,32 @@ public class LocationObserver implements LocationListener {
 
     @Override
     public void onProviderDisabled(String provider) {
-        // implement me!
+		AlertDialog.Builder builder = new AlertDialog.Builder(
+				mCurrentAppContext);
+		builder.setMessage(
+				mCurrentAppContext.getResources().getString(
+						R.string.location_disabled))
+				.setCancelable(false)
+				.setPositiveButton(
+						mCurrentAppContext.getResources().getString(
+								R.string.enable),
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								Intent gpsOptionsIntent = new Intent(
+										android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+								mCurrentAppContext
+										.startActivity(gpsOptionsIntent);
+							}
+						});
+		builder.setNegativeButton(
+				mCurrentAppContext.getResources().getString(R.string.cancel),
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.cancel();
+					}
+				});
+		AlertDialog alert = builder.create();
+		alert.show();
     }
 
     @Override
