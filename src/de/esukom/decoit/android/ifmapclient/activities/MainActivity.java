@@ -941,7 +941,8 @@ public class MainActivity extends Activity {
 
 			// "unlock" some parts of preferences
 			PreferencesValues.sLockPreferences = false;
-			PreferencesValues.sLockLocationTrackingOptions = false;
+			PreferencesValues.sLockConnectionPreferences = false;
+      PreferencesValues.sLockLocationTrackingOptions = false;
 			mCurrentSessionId = null; // session has ended!
 
 			// deactivate handler for sending metadata and renew-messages to
