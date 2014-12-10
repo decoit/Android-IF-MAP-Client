@@ -180,8 +180,8 @@ public class StatusActivity extends Activity implements OnItemClickListener {
         addValueToListEntry(getString(R.string.info_label_value_branding), mDeviceProperties.getPhoneProperties().getBranding());
         addValueToListEntry(getString(R.string.info_label_value_manufacturer), mDeviceProperties.getPhoneProperties().getManufacturer());
         addValueToListEntry(getString(R.string.info_label_value_phonenumber), mDeviceProperties.getPhoneProperties().getPhonenumber());
-        addValueToListEntry(getString(R.string.info_label_value_smscount), new Integer(SMSObserver.sSmsInCount).toString());
-        addValueToListEntry(getString(R.string.info_label_value_smscount_out), new Integer(SMSObserver.sSmsSentCount).toString());
+        addValueToListEntry(getString(R.string.info_label_value_smscount), Integer.valueOf(SMSObserver.sSmsInCount).toString());
+        addValueToListEntry(getString(R.string.info_label_value_smscount_out), Integer.valueOf(SMSObserver.sSmsSentCount).toString());
         addValueToListEntry(getString(R.string.info_label_value_smscount_lastsend), convertLastSentDate(SMSObserver.sLastSendDate));
         addValueToListEntry(getString(R.string.info_label_value_camera_lastused), convertLastSentDate(CameraReceiver.sLastPictureTakenDate));
         addValueToListEntry(getString(R.string.info_label_value_bluetooth), mDeviceProperties.getPhoneProperties()
@@ -466,9 +466,9 @@ public class StatusActivity extends Activity implements OnItemClickListener {
         sLocationLatitude.setText("Latitude: " + latitude);
         sLocationLongitude.setText("Longitude: " + longitude);
         sLocationAltitude.setText("Altitude: " + altitude);
-        sLatitudeValue = new Double(latitude).toString();
-        sLongitudeValue = new Double(longitude).toString();
-        sAltitudeValue = new Double(altitude).toString();
+        sLatitudeValue = Double.valueOf(latitude).toString();
+        sLongitudeValue = Double.valueOf(longitude).toString();
+        sAltitudeValue = Double.valueOf(altitude).toString();
     }
 
     /**

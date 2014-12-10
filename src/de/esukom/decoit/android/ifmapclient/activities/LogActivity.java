@@ -141,7 +141,7 @@ public class LogActivity extends Activity {
 	 *            index to delete message from database
 	 */
 	public void deleteEntry(int id) {
-		mLogDB.deleteMessageAtId(mLogDB.getWritableDatabase(), new Integer(id).toString());
+		mLogDB.deleteMessageAtId(mLogDB.getWritableDatabase(), Integer.valueOf(id).toString());
 	}
 
 	/**

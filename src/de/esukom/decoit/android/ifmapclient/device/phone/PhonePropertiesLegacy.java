@@ -187,6 +187,7 @@ public class PhonePropertiesLegacy extends PhoneProperties{
      * 
      * @return current baseband-version
      */
+    @SuppressWarnings("deprecation")
     @Override
     public String getBasebandVersion(){
         return Build.RADIO;

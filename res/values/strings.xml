@@ -24,9 +24,9 @@
 	<string name="main_buttonlabel_poll">Send a Poll Request</string>
 	<string name="main_buttonlabel_search">Search last location</string>
 	<string name="main_ButtonHandler">mainTabButtonHandler</string>
-	<string name="main_default_wrongconfig_message">error while validating preferences...please check them</string>
+	<string name="main_default_wrongconfig_message">error while validating preferences…please check them</string>
 	<string name="main_default_connectiontimeout_message">Connection Timeout - No Response from MAP-Server!</string>
-	<string name="main_progressbar_message_srcrequest_1">Please Wait...</string>
+	<string name="main_progressbar_message_srcrequest_1">Please Wait…</string>
 	<string name="main_progressbar_message_srcrequest_2">Executing Request</string>
 	<string name="main_label_status_message">Status Message:</string>
 	<string name="main_default_status_message">Waiting for User Input</string>
@@ -146,7 +146,7 @@
 	<!-- About-Info-Tab -->
 	<string name="info_name">Android IF-MAP Client</string>
 	<string name="info_version">Version 0.1.6</string>
-	<string name="info_copyright">(c) 2012 Decoit GmbH</string>
+	<string name="info_copyright">© 2012 Decoit GmbH</string>
 	<string name="info_license">Released under Apache License, Version 2.0</string>
 	<string name="info_label_openwebsite">Visit DECOIT Homepage</string>
 	<string name="info_ButtonHandler">infoTabButtonHandler</string>

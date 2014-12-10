@@ -87,7 +87,7 @@ public class LocalServiceParameters {
 		this.mPassword = prefs.getPasswordPreference();
 		this.mIpAddress = ipAddress;
 		this.mMessageType = messageType;
-		this.mRenewIntervall = new Long(prefs.getRenewIntervalPreference()).longValue();
+		this.mRenewIntervall = Long.valueOf(prefs.getRenewIntervalPreference()).longValue();
 		this.mReguestParamsPublish = reguestParams;
 		this.mMsgHandler = msgHandler;
 
