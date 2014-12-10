@@ -51,11 +51,7 @@
 		<service android:enabled="true"
 			android:name="de.esukom.decoit.android.ifmapclient.services.RenewConnectionService">
 		</service>
-		
-		<service android:enabled="true"
-			android:name="de.esukom.decoit.android.ifmapclient.services.AsyncConnectionService">
-		</service>
-		
+
 		<service android:enabled="true"
 			android:name="de.esukom.decoit.android.ifmapclient.services.PermanentConnectionService">
 		</service>

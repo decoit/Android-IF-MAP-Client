@@ -20,6 +20,7 @@
  */
 package de.esukom.decoit.android.ifmapclient.device.phone;
 
+import android.annotation.TargetApi;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.media.AudioManager;
@@ -186,6 +187,7 @@ public class PhonePropertiesIcs extends PhoneProperties{
      * 
      * @return current baseband-version
      */
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     public String getBasebandVersion(){
         return Build.getRadioVersion();
