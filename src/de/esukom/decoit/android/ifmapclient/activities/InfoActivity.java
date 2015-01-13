@@ -59,7 +59,7 @@ public class InfoActivity extends Activity {
         switch (view.getId()) {
         // open project web-site
         case R.id.OpenProjectWebsite_Button:
-            String url = "http://www.decoit.de/";
+            String url = "http://www.esukom.de/";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);
