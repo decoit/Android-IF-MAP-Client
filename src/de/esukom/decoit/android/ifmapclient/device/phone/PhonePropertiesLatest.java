@@ -34,12 +34,12 @@ import android.telephony.TelephonyManager;
  * @version 0.1.6
  * @author Dennis Dunekacke, Decoit GmbH
  */
-public class PhonePropertiesIcs extends PhoneProperties{
+public class PhonePropertiesLatest extends PhoneProperties{
     
     /**
      * constructor
      */
-    public PhonePropertiesIcs(Context appContext) {
+    public PhonePropertiesLatest(Context appContext) {
         mAppContext = appContext;
         mTelephonyMgr = (TelephonyManager) appContext.getSystemService(Context.TELEPHONY_SERVICE);
     }
