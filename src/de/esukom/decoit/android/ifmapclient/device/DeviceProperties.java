@@ -35,6 +35,7 @@ import de.esukom.decoit.android.ifmapclient.device.system.SystemProperties;
  * 
  * @author Dennis Dunekacke, DECOIT GmbH
  * @author Marcel Jahnke, DECOIT GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.4.2
  */
 public class DeviceProperties {

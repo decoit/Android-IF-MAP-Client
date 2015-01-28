@@ -148,7 +148,7 @@
 	<string name="info_version">Version 0.1.6</string>
 	<string name="info_copyright">© 2012 Decoit GmbH</string>
 	<string name="info_license">Released under Apache License, Version 2.0</string>
-	<string name="info_label_openwebsite">Visit DECOIT Homepage</string>
+	<string name="info_label_openwebsite">Visit Esukom-Project Website</string>
 	<string name="info_ButtonHandler">infoTabButtonHandler</string>
 	
 	<!-- toast messages -->

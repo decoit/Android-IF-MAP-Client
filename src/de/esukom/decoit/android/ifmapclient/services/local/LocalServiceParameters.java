@@ -34,6 +34,7 @@ import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
  * 
  * @author Dennis Dunekacke, DECOIT GmbH
  * @author Marcel Jahnke, DECOIT GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.6
  */
 public class LocalServiceParameters {

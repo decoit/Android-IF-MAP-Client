@@ -38,6 +38,7 @@ import java.util.List;
  * Activity for showing Log-Messages
  * 
  * @author Dennis Dunekacke, Decoit GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.6
  */
 public class LogActivity extends Activity {

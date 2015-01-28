@@ -72,6 +72,7 @@ import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
  * @version 0.1.6
  * @author Dennis Dunekacke, Decoit GmbH
  * @author Marcel Jahnke, Decoit GmbH
+ * @author Markus Schölzel, Decoit GmbH
  */
 public class MainActivity extends Activity {
 

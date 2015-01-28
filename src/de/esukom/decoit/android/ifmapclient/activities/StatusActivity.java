@@ -50,6 +50,7 @@ import de.esukom.decoit.android.ifmapclient.util.Toolbox;
  * @author Dennis Dunekacke, Decoit GmbH
  * @author Marcel Jahnke, Decoit GmbH
  * @author Leonid Schwenke, Decoit GmbH
+ * @author Markus Schölzel, Decoit GmbH
  */
 public class StatusActivity extends Activity implements OnItemClickListener {
 

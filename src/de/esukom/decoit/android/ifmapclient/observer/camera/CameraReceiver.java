@@ -6,6 +6,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+/**
+* observe use of camera
+*
+* @author Markus Schölzel, Decoit GmbH
+*/
 public class CameraReceiver extends BroadcastReceiver {
 	public static Date sLastPictureTakenDate = null;
 

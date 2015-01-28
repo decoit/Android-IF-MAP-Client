@@ -34,6 +34,7 @@ import de.esukom.decoit.android.ifmapclient.activities.R;
  * 
  * @author Dennis Dunekacke, DECOIT GmbH
  * @author Marcel Jahnke, DECOIT GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.6
  * 
  */

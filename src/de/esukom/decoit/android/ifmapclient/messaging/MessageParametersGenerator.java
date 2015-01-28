@@ -71,6 +71,7 @@ import de.fhhannover.inform.trust.ifmapj.metadata.StandardIfmapMetadataFactory;
  * 
  * @author Marcel Jahnke, DECOIT GmbH
  * @author Dennis Dunekacke, DECOIT GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.6
  * @param <T>
  */
