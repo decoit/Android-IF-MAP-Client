@@ -38,6 +38,7 @@ import java.util.List;
  * Activity for showing Log-Messages
  * 
  * @author Dennis Dunekacke, Decoit GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.6
  */
 public class LogActivity extends Activity {
@@ -141,7 +142,7 @@ public class LogActivity extends Activity {
 	 *            index to delete message from database
 	 */
 	public void deleteEntry(int id) {
-		mLogDB.deleteMessageAtId(mLogDB.getWritableDatabase(), new Integer(id).toString());
+		mLogDB.deleteMessageAtId(mLogDB.getWritableDatabase(), Integer.valueOf(id).toString());
 	}
 
 	/**

@@ -42,7 +42,7 @@ import de.esukom.decoit.android.ifmapclient.device.application.ApplicationListEn
 import de.esukom.decoit.android.ifmapclient.device.application.Permission;
 import de.esukom.decoit.android.ifmapclient.device.system.SystemProperties;
 import de.esukom.decoit.android.ifmapclient.observer.battery.BatteryReceiver;
-import de.esukom.decoit.android.ifmapclient.observer.camera.CameraObserver;
+import de.esukom.decoit.android.ifmapclient.observer.camera.CameraReceiver;
 import de.esukom.decoit.android.ifmapclient.observer.sms.SMSObserver;
 import de.esukom.decoit.android.ifmapclient.observer.sms.SMSObserver.SmsInfos;
 import de.esukom.decoit.android.ifmapclient.preferences.PreferencesValues;
@@ -71,6 +71,7 @@ import de.fhhannover.inform.trust.ifmapj.metadata.StandardIfmapMetadataFactory;
  * 
  * @author Marcel Jahnke, DECOIT GmbH
  * @author Dennis Dunekacke, DECOIT GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.6
  * @param <T>
  */
@@ -93,7 +94,7 @@ public class MessageParametersGenerator<T> {
     Device deviceIdentifier;
 
     // location information
-    private String mLastAltitude;
+    private String mLastLatitude;
     private String mLastLongitude;
 
     // request-type
@@ -278,7 +279,7 @@ public class MessageParametersGenerator<T> {
      * reset all mLast* values
      */
     private void restLastValues() {
-    	mLastAltitude = null;
+    	mLastLatitude = null;
     	mLastAppList = null;
     	mLastBatStat = null;
     	mLastCpuLoad = null;
@@ -356,8 +357,8 @@ public class MessageParametersGenerator<T> {
         // republish informations-flag
         boolean locationChanged = false;
         if (PreferencesValues.sEnableLocationTracking && (MainActivity.sLatitude != null && MainActivity.sLongitude != null)) {
-            if (mLastAltitude != MainActivity.sLatitude || mLastLongitude != MainActivity.sLongitude) {
-                mLastAltitude = MainActivity.sLatitude;
+            if (mLastLatitude != MainActivity.sLatitude || mLastLongitude != MainActivity.sLongitude) {
+                mLastLatitude = MainActivity.sLatitude;
                 mLastLongitude = MainActivity.sLongitude;
                 locationChanged = true;
             }
@@ -519,7 +520,7 @@ public class MessageParametersGenerator<T> {
         // we just use that...as soon as other sensors are observed, we need a method
         // to compare the dates of the sensors that are used to find out which of them
         // was the last one in use...
-        Date lastCameraUsedDate = CameraObserver.sLastPictureTakenDate;
+        Date lastCameraUsedDate = CameraReceiver.sLastPictureTakenDate;
         if (lastCameraUsedDate != null) {
             fe = createFeature("NewPicture", time, "true", QUALI);
             addToUpdateRequest(publishRequest, mPhoneSensorCat, null, fe, MetadataLifetime.session, true);

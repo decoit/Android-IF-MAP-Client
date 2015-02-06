@@ -20,6 +20,7 @@
  */
 package de.esukom.decoit.android.ifmapclient.device.phone;
 
+import android.annotation.TargetApi;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.media.AudioManager;
@@ -32,13 +33,14 @@ import android.telephony.TelephonyManager;
  * 
  * @version 0.1.6
  * @author Dennis Dunekacke, Decoit GmbH
+ * @author Markus Schölzel, Decoit GmbH
  */
-public class PhonePropertiesIcs extends PhoneProperties{
+public class PhonePropertiesLatest extends PhoneProperties{
     
     /**
      * constructor
      */
-    public PhonePropertiesIcs(Context appContext) {
+    public PhonePropertiesLatest(Context appContext) {
         mAppContext = appContext;
         mTelephonyMgr = (TelephonyManager) appContext.getSystemService(Context.TELEPHONY_SERVICE);
     }
@@ -186,6 +188,7 @@ public class PhonePropertiesIcs extends PhoneProperties{
      * 
      * @return current baseband-version
      */
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     public String getBasebandVersion(){
         return Build.getRadioVersion();

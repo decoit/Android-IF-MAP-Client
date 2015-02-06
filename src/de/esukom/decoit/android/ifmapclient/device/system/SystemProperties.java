@@ -44,6 +44,7 @@ import de.esukom.decoit.android.ifmapclient.util.Toolbox;
  * 
  * @version 0.1.6
  * @author Dennis Dunekacke, Decoit GmbH
+ * @author Markus Schölzel, Decoit GmbH
  */
 public class SystemProperties {
 
@@ -221,13 +222,22 @@ public class SystemProperties {
 	 */
 	private int getTotalMemoryAmountInMB() {
 		int totalMemCalculated = 0;
+		RandomAccessFile reader = null;
 		try {
-			RandomAccessFile reader = new RandomAccessFile("/proc/meminfo", "r");
+			reader = new RandomAccessFile("/proc/meminfo", "r");
 			String totalMem = reader.readLine().replace("MemTotal:", "")
 					.replace("kB", "").replace(" ", "");
 			totalMemCalculated = Integer.parseInt(totalMem) / 1024;
 		} catch (IOException ex) {
 			ex.printStackTrace();
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+			}
 		}
 		return totalMemCalculated;
 	}

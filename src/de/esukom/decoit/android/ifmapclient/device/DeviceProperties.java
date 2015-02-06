@@ -35,6 +35,7 @@ import de.esukom.decoit.android.ifmapclient.device.system.SystemProperties;
  * 
  * @author Dennis Dunekacke, DECOIT GmbH
  * @author Marcel Jahnke, DECOIT GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.4.2
  */
 public class DeviceProperties {
@@ -59,12 +60,12 @@ public class DeviceProperties {
          * some calls inside phone-properties class differs in some versions of android, so we use reflection to get the required class
          */
 
-        int sdkVersion = Integer.parseInt(Build.VERSION.SDK);
+        int sdkVersion = Build.VERSION.SDK_INT;
         String className = null;
         if (sdkVersion < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             className = "de.esukom.decoit.android.ifmapclient.device.phone.PhonePropertiesLegacy";
         } else {
-            className = "de.esukom.decoit.android.ifmapclient.device.phone.PhonePropertiesIcs";
+            className = "de.esukom.decoit.android.ifmapclient.device.phone.PhonePropertiesLatest";
         }
 
         /*

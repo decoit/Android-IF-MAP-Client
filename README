@@ -9,20 +9,20 @@ Content:
    a) installation
    b) configuring
    c) running
-4) known issues/TODOs
+4) known issues/TODO큦
 5) additional Notes
 6) Changelog
 
 
 1 - Credits:
 ------------
-Developed within the ESUKOM-Project between 2011 and 2012 by Decoit GmbH (http://www.decoit.de/)
+Developed within the ESUKOM-Project in 2011 by Decoit GmbH (http://www.decoit.de/)
 More Information can be found on the ESUKOM-Project Website (http://www.esukom.de/)
 
 
 2 - License:
 ------------
-2012 Decoit GmbH
+Copyright 2014 Decoit GmbH
 
 Licensed to the Apache Software Foundation (ASF) under one   
 or more contributor license agreements.  See the NOTICE file  
@@ -64,8 +64,10 @@ AndroidIfMapClient will send this data automatically in the Intervall set inside
 Preference-Tab.
 
 
-4 - TODOs:
-----------
+4 - TODO큦:
+-----------
+-> this is just a prototype, so there are a lot of TODO큦 that have to be handled
+   in the next version
    
 -> VPN is supported, but the Connection has to be established with the Android
    "Native"-VPN-Client. You can do that by bringing the AndroidIfMapClient to the
@@ -176,7 +178,7 @@ Version 0.1.5:
 -> Added autoconnect-option, which leads to an initial new-session-request as soon as the Android-Client has
    been started
    
--> Its now possible to send esukom-specific-metadata which is used within the esukom-project
+-> It큦 now possible to send esukom-specific-metadata which is used within the esukom-project
 
 -> Changed button behaviour: the back Button does not close the Android-Client anymore but brings
    it to the background. To quit the Android-Client, use the "quit"-option inside the menu 

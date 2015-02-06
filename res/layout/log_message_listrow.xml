@@ -24,11 +24,11 @@
 			android:id="@+id/tvMessagetype" android:textSize="13sp">
 		</TextView>
 	</LinearLayout>
-	<LinearLayout android:id="@+id/LinearLayout02"
+	<LinearLayout android:id="@id/LinearLayout02"
 		android:layout_height="wrap_content" android:layout_width="fill_parent">
 
 		<!-- target address label -->
-		<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+		<TextView android:id="@id/TextView01" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:textStyle="bold"
 			android:text="Target: " android:textSize="13sp">
 		</TextView>
@@ -39,10 +39,10 @@
 			android:textSize="13sp" android:layout_weight="1">
 		</TextView>
 	</LinearLayout>
-	<LinearLayout android:id="@+id/LinearLayout02"
+	<LinearLayout android:id="@id/LinearLayout02"
 		android:layout_height="wrap_content" android:layout_width="fill_parent">
 		<!-- status label -->
-		<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+		<TextView android:id="@id/TextView01" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:textStyle="bold"
 			android:text="Status: " android:textSize="13sp">
 		</TextView>
@@ -53,7 +53,7 @@
 			android:textSize="13sp" android:layout_weight="1">
 		</TextView>
 	</LinearLayout>
-	<LinearLayout android:id="@+id/LinearLayout02"
+	<LinearLayout android:id="@id/LinearLayout02"
 		android:layout_height="wrap_content" android:layout_width="fill_parent">
 		 <!-- details button -->
 		<Button android:id="@+id/details_button" android:layout_width="wrap_content"

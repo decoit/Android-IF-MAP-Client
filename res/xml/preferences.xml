@@ -53,6 +53,7 @@
 		<EditTextPreference android:name="Password"
 			android:summary="@string/preferences_summary_password"
 			android:defaultValue="pass" android:title="@string/preferences_title_password"
+			android:inputType="textPassword"
 			android:key="passwordPreference" />
 	</PreferenceCategory>
 	

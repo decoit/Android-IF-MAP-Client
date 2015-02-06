@@ -48,7 +48,7 @@ import de.esukom.decoit.android.ifmapclient.messaging.MessageHandler;
 import de.esukom.decoit.android.ifmapclient.messaging.MessageParametersGenerator;
 import de.esukom.decoit.android.ifmapclient.messaging.ResponseParameters;
 import de.esukom.decoit.android.ifmapclient.observer.battery.BatteryReceiver;
-import de.esukom.decoit.android.ifmapclient.observer.camera.CameraObserver;
+import de.esukom.decoit.android.ifmapclient.observer.camera.CameraReceiver;
 import de.esukom.decoit.android.ifmapclient.observer.location.LocationObserver;
 import de.esukom.decoit.android.ifmapclient.observer.sms.SMSObserver;
 import de.esukom.decoit.android.ifmapclient.preferences.PreferencesValues;
@@ -72,6 +72,7 @@ import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
  * @version 0.1.6
  * @author Dennis Dunekacke, Decoit GmbH
  * @author Marcel Jahnke, Decoit GmbH
+ * @author Markus Schölzel, Decoit GmbH
  */
 public class MainActivity extends Activity {
 
@@ -195,9 +196,9 @@ public class MainActivity extends Activity {
 	// observer for incoming and outgoing sms-messages
 	private SMSObserver mSmsObserver = null;
 
-	// observer for pictures taken with the camera
+	// receiver for pictures taken with the camera
 	@SuppressWarnings("unused")
-	private CameraObserver mCameraObserver = null;
+	private CameraReceiver mCameraReceiver = null;
 
 	// -------------------------------------------------------------------------
 	// ACTIVITY LIFECYCLE HANDLING
@@ -226,18 +227,13 @@ public class MainActivity extends Activity {
 		// generator for if-map-messages to be published
 		parameters = new MessageParametersGenerator<PublishRequest>();
 
-		// initialize location tracking
-		if (PreferencesValues.sEnableLocationTracking) {
-			initLocation();
-		}
-
 		// initialize sms-observing
 		mSmsObserver = new SMSObserver(getApplicationContext());
 		mSmsObserver.registerReceivedSmsBroadcastReceiver();
 		mSmsObserver.registerSentSmsContentObserver();
 
-		// initialize camera-observer
-		mCameraObserver = new CameraObserver("/DCIM/Camera");
+		// initialize camera-receiver
+		mCameraReceiver = new CameraReceiver();
 
 		// autoconnect to MAP-Server at Startup
 		if (mPreferences.ismAutoconnect()) {
@@ -946,7 +942,8 @@ public class MainActivity extends Activity {
 
 			// "unlock" some parts of preferences
 			PreferencesValues.sLockPreferences = false;
-			PreferencesValues.sLockLocationTrackingOptions = false;
+			PreferencesValues.sLockConnectionPreferences = false;
+      PreferencesValues.sLockLocationTrackingOptions = false;
 			mCurrentSessionId = null; // session has ended!
 
 			// deactivate handler for sending metadata and renew-messages to

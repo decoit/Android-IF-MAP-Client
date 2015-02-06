@@ -34,6 +34,7 @@ import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
  * 
  * @author Dennis Dunekacke, DECOIT GmbH
  * @author Marcel Jahnke, DECOIT GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.6
  */
 public class LocalServiceParameters {
@@ -87,7 +88,7 @@ public class LocalServiceParameters {
 		this.mPassword = prefs.getPasswordPreference();
 		this.mIpAddress = ipAddress;
 		this.mMessageType = messageType;
-		this.mRenewIntervall = new Long(prefs.getRenewIntervalPreference()).longValue();
+		this.mRenewIntervall = Long.valueOf(prefs.getRenewIntervalPreference()).longValue();
 		this.mReguestParamsPublish = reguestParams;
 		this.mMsgHandler = msgHandler;
 

@@ -23,13 +23,12 @@ package de.esukom.decoit.android.ifmapclient.services.binder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import de.esukom.decoit.android.ifmapclient.activities.MainActivity;
 import de.esukom.decoit.android.ifmapclient.services.PermanentConnectionService;
 import de.esukom.decoit.android.ifmapclient.services.RenewConnectionService;
 import de.esukom.decoit.android.ifmapclient.util.Toolbox;
 
 
-public class BinderClass extends MainActivity{
+public class BinderClass {
 
     /**
      * Establish a connection with the synchronous service. We use an explicit
