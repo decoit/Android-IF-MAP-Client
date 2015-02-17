@@ -39,6 +39,12 @@ public class PreferencesValues {
     public static boolean sLockPreferences = false;
     public static boolean sLockLocationTrackingOptions = false;
 
+    // "lock" parts of the preferences, which are not used in iMonitor
+    public static boolean sLockIMonitorPreferences = false;
+
+    // monitoring mode
+    public static String sMonitoringPreference = null;
+
     // location tracking
     public static String sLocationTrackingType = null;
     public static boolean sEnableLocationTracking = false;
@@ -58,6 +64,10 @@ public class PreferencesValues {
     // server-settings
     private String mServerIpPreference;
     private String mServerPortPreference;
+
+    // imonitor-settings
+    private String mNscaPassPreference;
+    private String mNscaEncPreference;
 
     // user-settings
     private boolean mUseBasicAuth;
@@ -139,6 +149,36 @@ public class PreferencesValues {
      */
     public void setServerPortPreference(String mServerPortPreference) {
         this.mServerPortPreference = mServerPortPreference;
+    }
+
+    /**
+     * @return the mNscaPassPreference
+     */
+    public String getNscaPassPreference() {
+        return mNscaPassPreference;
+    }
+
+    /**
+     * @param mNscaPassPreference
+     *            the mNscaPassPreference to set
+     */
+    public void setNscaPassPreference(String mNscaPassPreference) {
+        this.mNscaPassPreference = mNscaPassPreference;
+    }
+
+    /**
+     * @return the mNscaEncPreference
+     */
+    public String getNscaEncPreference() {
+        return mNscaEncPreference;
+    }
+
+    /**
+     * @param mNscaEncPreference
+     *            the mNscaEncPreference to set
+     */
+    public void setNscaEncPreference(String mNscaEncPreference) {
+        this.mNscaEncPreference = mNscaEncPreference;
     }
 
     /**

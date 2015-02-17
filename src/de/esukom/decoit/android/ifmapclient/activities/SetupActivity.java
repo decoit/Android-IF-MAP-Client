@@ -33,6 +33,7 @@ import android.preference.PreferenceCategory;
  * 
  * @version 0.1.6
  * @author Dennis Dunekacke, Decoit GmbH
+ * @author Markus Schölzel, Decoit GmbH
  */
 public class SetupActivity extends PreferenceActivity {
 
@@ -46,6 +47,7 @@ public class SetupActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         PreferenceCategory serverSettings = (PreferenceCategory) findPreference("serverSettings");
+        PreferenceCategory imonitorSettings = (PreferenceCategory) findPreference("imonitorSettings");
         PreferenceCategory userSettings = (PreferenceCategory) findPreference("userSettings");
         PreferenceCategory connectionSettings = (PreferenceCategory) findPreference("connectionSettings");
         PreferenceCategory applicationSettings = (PreferenceCategory) findPreference("applicationSettings");
@@ -68,7 +70,14 @@ public class SetupActivity extends PreferenceActivity {
         } else {
             connectionSettings.setEnabled(true);
         }
-        
+
+        // lock/unlock iMonitor settings
+		if (PreferencesValues.sLockIMonitorPreferences) {
+			imonitorSettings.setEnabled(false);
+		} else {
+			imonitorSettings.setEnabled(true);
+		}
+
         // lock/unlock location tracking system
         if (PreferencesValues.sLockLocationTrackingOptions){
             locationTrackingSettings.setEnabled(false);
@@ -83,6 +92,7 @@ public class SetupActivity extends PreferenceActivity {
         Toolbox.logTxt(this.getClass().getName(), "SetupActivity.OnResume(...) called");
         super.onResume();
         PreferenceCategory serverSettings = (PreferenceCategory) findPreference("serverSettings");
+        PreferenceCategory imonitorSettings = (PreferenceCategory) findPreference("imonitorSettings");
         PreferenceCategory userSettings = (PreferenceCategory) findPreference("userSettings");
         PreferenceCategory connectionSettings = (PreferenceCategory) findPreference("connectionSettings");
         PreferenceCategory applicationSettings = (PreferenceCategory) findPreference("applicationSettings");
@@ -105,7 +115,14 @@ public class SetupActivity extends PreferenceActivity {
         } else {
             connectionSettings.setEnabled(true);
         }
-        
+
+        // lock/unlock iMonitor settings
+		if (PreferencesValues.sLockIMonitorPreferences) {
+			imonitorSettings.setEnabled(false);
+		} else {
+			imonitorSettings.setEnabled(true);
+		}
+
         // lock/unlock location tracking system
         if (PreferencesValues.sLockLocationTrackingOptions){
             locationTrackingSettings.setEnabled(false);

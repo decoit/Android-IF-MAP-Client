@@ -25,8 +25,11 @@ import java.util.regex.Matcher;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.res.Resources.NotFoundException;
@@ -34,16 +37,22 @@ import android.hardware.Camera;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.preference.PreferenceManager;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.googlecode.jsendnsca.encryption.Encryption;
+
 import de.esukom.decoit.android.ifmapclient.connection.ConnectionObjects;
 import de.esukom.decoit.android.ifmapclient.database.LoggingDatabase;
 import de.esukom.decoit.android.ifmapclient.device.DeviceProperties;
 import de.esukom.decoit.android.ifmapclient.logging.LogMessage;
 import de.esukom.decoit.android.ifmapclient.logging.LogMessageHelper;
+import de.esukom.decoit.android.ifmapclient.messaging.EventParameters;
 import de.esukom.decoit.android.ifmapclient.messaging.MessageHandler;
 import de.esukom.decoit.android.ifmapclient.messaging.MessageParametersGenerator;
 import de.esukom.decoit.android.ifmapclient.messaging.ResponseParameters;
@@ -52,6 +61,8 @@ import de.esukom.decoit.android.ifmapclient.observer.camera.CameraReceiver;
 import de.esukom.decoit.android.ifmapclient.observer.location.LocationObserver;
 import de.esukom.decoit.android.ifmapclient.observer.sms.SMSObserver;
 import de.esukom.decoit.android.ifmapclient.preferences.PreferencesValues;
+import de.esukom.decoit.android.ifmapclient.services.NscaService;
+import de.esukom.decoit.android.ifmapclient.services.NscaService.LocalBinder;
 import de.esukom.decoit.android.ifmapclient.services.PermanentConnectionService;
 import de.esukom.decoit.android.ifmapclient.services.RenewConnectionService;
 import de.esukom.decoit.android.ifmapclient.services.binder.BinderClass;
@@ -142,6 +153,9 @@ public class MainActivity extends Activity {
 
 	// device properties
 	private DeviceProperties mDeviceProperties;
+
+	// manage nsca connection for iMonitor
+	private NscaService mNscaServiceBind;
 
 	// buttons
 	private Button mConnectButton;
@@ -235,7 +249,7 @@ public class MainActivity extends Activity {
 		// initialize camera-receiver
 		mCameraReceiver = new CameraReceiver();
 
-		// autoconnect to MAP-Server at Startup
+		// autoconnect at Startup
 		if (mPreferences.ismAutoconnect()) {
 			// start connection service if all required preferences are set
 			if (!validatePreferences()) {
@@ -245,7 +259,8 @@ public class MainActivity extends Activity {
 						+ " "
 						+ getResources().getString(
 								R.string.main_default_wrongconfig_message));
-			} else {
+			} else if (PreferencesValues.sMonitoringPreference
+							.equalsIgnoreCase("IF-MAP")) {
 				// set status message to-text-output-field
 				mStatusMessageField.append("\n"
 						+ getResources().getString(
@@ -258,6 +273,8 @@ public class MainActivity extends Activity {
 				mMessageType = MessageHandler.MSG_TYPE_REQUEST_NEWSESSION;
 				initConnection();
 				startConnectionService();
+			} else {
+					mConnectButton.performClick();
 			}
 		}
 
@@ -419,6 +436,8 @@ public class MainActivity extends Activity {
 		// set preferences
 		PreferencesValues.sApplicationFileLogging = prefs.getBoolean(
 				"applicatiologging", false);
+		PreferencesValues.sMonitoringPreference = prefs.getString(
+				"serverPref", "IF-MAP");
 		PreferencesValues.sLocationTrackingType = prefs.getString(
 				"locationPref", "GPS");
 		PreferencesValues.sEnableLocationTracking = prefs.getBoolean(
@@ -460,6 +479,10 @@ public class MainActivity extends Activity {
 				"serveripPreference", ""));
 		mPreferences.setServerPortPreference(prefs.getString(
 				"serverportPreference", "8443"));
+		mPreferences.setNscaEncPreference(prefs.getString(
+				"nscaEncPref", "1"));
+		mPreferences.setNscaPassPreference(prefs.getString(
+				"imonitorPassPreference", "icinga"));
 		mPreferences.setIsPermantConnection(prefs.getBoolean(
 				"permanantlyConectionPreferences", true));
 		mPreferences.setIsUseBasicAuth(prefs.getBoolean("basicAuth", true));
@@ -638,6 +661,76 @@ public class MainActivity extends Activity {
 	 *            element that originated the call
 	 */
 	public void mainTabButtonHandler(View view) {
+		if(PreferencesValues.sMonitoringPreference.equalsIgnoreCase("IF-MAP")) {
+			mainTabButtonHandlerIfmap(view);
+		}
+		else {
+			mainTabButtonHandlerIMonitor(view);
+		}
+	}
+
+	private void mainTabButtonHandlerIMonitor(View view) {
+		if (mIsConnected) {
+			switch (view.getId()) {
+			case R.id.Disconnect_Button:
+				mNscaServiceBind.stopMonitor();
+				getApplicationContext().unbindService(mNscaConnection);
+
+				mConnectButton.setEnabled(true);
+				mDisconnectButton.setEnabled(false);
+				mIsConnected = false;
+				mStatusMessageField.append("\n"
+						+ getResources().getString(
+								R.string.main_status_message_prefix) + " "
+						+ "disconnected.");
+				
+				PreferencesValues.sLockPreferences = false;
+				PreferencesValues.sLockConnectionPreferences = false;
+				PreferencesValues.sLockIMonitorPreferences = false;
+
+				break;
+			}
+		}
+
+		// not connected to imonitor
+		else {
+			switch (view.getId()) {
+			case R.id.Connect_Button:
+				// start connection service if all required preferences are set
+				if (!validatePreferences()) {
+					mStatusMessageField.append("\n"
+							+ getResources().getString(
+									R.string.main_status_message_errorprefix)
+							+ " "
+							+ getResources().getString(
+									R.string.main_default_wrongconfig_message));
+				} else {
+					// set status message to-text-output-field
+					mStatusMessageField.append("\n"
+							+ getResources().getString(
+									R.string.main_status_message_prefix) + " "
+							+ "Sending data to "
+							+ mPreferences.getServerIpPreference() + ":"
+							+ mPreferences.getServerPortPreference());
+					getApplicationContext().bindService(
+							new Intent(this, NscaService.class),
+							mNscaConnection, Context.BIND_AUTO_CREATE);
+					
+					PreferencesValues.sLockPreferences = true;
+					PreferencesValues.sLockConnectionPreferences = true;
+					PreferencesValues.sLockIMonitorPreferences = true;
+					
+					mIsConnected = true;
+					mConnectButton.setEnabled(false);
+					mDisconnectButton.setEnabled(true);
+				}
+
+				break;
+			}
+		}
+	}
+
+	private void mainTabButtonHandlerIfmap(View view) {
 		if (mIsConnected) {
 			switch (view.getId()) {
 			// close session button
@@ -742,6 +835,14 @@ public class MainActivity extends Activity {
 			}
 		} else {
 			authValid = true;
+		}
+
+		if (PreferencesValues.sMonitoringPreference.equalsIgnoreCase("iMonitor")) {
+			// validate password (defaults always to "icinga")
+			if (mPreferences.getNscaPassPreference() != null
+					&& mPreferences.getNscaPassPreference().length() > 0) {
+				passValid = true;
+			}
 		}
 
 		if (ipValid && portValid && (authValid || (userValid && passValid))) {
@@ -1133,4 +1234,85 @@ public class MainActivity extends Activity {
 			startConnectionService();
 		}
 	}
+
+	// -------------------------------------------------------------------------
+	// iMonitor-Connection
+	// -------------------------------------------------------------------------
+
+	/**
+	 * create service connection
+	 * send InfoEvent and AppEvent on first connect
+	 */
+	private ServiceConnection mNscaConnection = new ServiceConnection() {
+	    public void onServiceConnected(ComponentName className,
+	            IBinder service) {
+	        LocalBinder binder = (LocalBinder) service;
+	        mNscaServiceBind = binder.getService();
+
+	        Encryption mNscaEncryption = null;
+	        switch(mPreferences.getNscaEncPreference()) {
+	        case "0":
+	            mNscaEncryption = Encryption.NONE;
+	            break;
+	        case "1":
+	            mNscaEncryption = Encryption.XOR;
+	            break;
+	        case "2":
+	            mNscaEncryption = Encryption.TRIPLE_DES;
+	            break;
+	        }
+
+	        mNscaServiceBind.setupConnection(mPreferences.getServerIpPreference(), mPreferences.getServerPortPreference(), mPreferences.getNscaPassPreference(), mNscaEncryption);
+
+	        LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(mMonitorEventReceiver, new IntentFilter("iMonitor-Event"));
+
+	        EventParameters eP = new EventParameters(mDeviceProperties);
+	        mNscaServiceBind.publish(eP.genInfoEvent());
+	        mNscaServiceBind.publish(eP.genAppEvents());
+
+	        mNscaServiceBind.startMonitor(mPreferences.getmUpdateInterval());
+	        mIsBound = true;
+	    }
+
+	    public void onServiceDisconnected(ComponentName arg0) {
+	        mIsBound = false;
+	    }
+	};
+
+	/**
+	 * receive (local) intents to generate and publish new events or drop connection
+	 */
+	private BroadcastReceiver mMonitorEventReceiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			EventParameters eP = new EventParameters(mDeviceProperties);
+			String type = intent.getStringExtra("Event");
+			if (type != null) {
+				switch (type) {
+				case "AppEvent":
+					mNscaServiceBind.publish(eP.genAppEvents());
+					mStatusMessageField.append("\n"
+							+ getResources().getString(
+									R.string.main_status_message_prefix) + " "
+							+ "AppEvent sent.");
+					break;
+				case "MonitorEvent":
+					mNscaServiceBind.publish(eP.genMonitorEvent());
+					mStatusMessageField.append("\n"
+							+ getResources().getString(
+									R.string.main_status_message_prefix) + " "
+							+ "MonitorEvent sent.");
+					break;
+				case "ConnectionError":
+					mStatusMessageField
+							.append("\n"
+									+ getResources()
+											.getString(
+													R.string.main_default_connectionerror_nsca));
+					mDisconnectButton.performClick();
+					break;
+				}
+			}
+		}
+	};
 }

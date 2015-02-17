@@ -55,7 +55,13 @@
 		<service android:enabled="true"
 			android:name="de.esukom.decoit.android.ifmapclient.services.PermanentConnectionService">
 		</service>
-		
+
+		<service
+		    android:name="de.esukom.decoit.android.ifmapclient.services.NscaService"
+		    android:enabled="true"
+		    android:exported="false" >
+		</service>
+
 	    <receiver android:name="MyStartupIntentReceiver" >
             <intent-filter>
                  <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -71,7 +77,18 @@
             <category android:name="android.intent.category.DEFAULT" />
             <data android:mimeType="image/*" />
         </intent-filter>
-    </receiver>
+		</receiver>
+
+		<receiver
+            android:name="de.esukom.decoit.android.ifmapclient.observer.app.AppReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
 	</application>
 
 

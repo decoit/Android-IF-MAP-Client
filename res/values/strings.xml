@@ -26,6 +26,7 @@
 	<string name="main_ButtonHandler">mainTabButtonHandler</string>
 	<string name="main_default_wrongconfig_message">error while validating preferences…please check them</string>
 	<string name="main_default_connectiontimeout_message">Connection Timeout - No Response from MAP-Server!</string>
+	<string name="main_default_connectionerror_nsca">Connection Error - Check your connection preferences!</string>
 	<string name="main_progressbar_message_srcrequest_1">Please Wait…</string>
 	<string name="main_progressbar_message_srcrequest_2">Executing Request</string>
 	<string name="main_label_status_message">Status Message:</string>
@@ -47,10 +48,13 @@
 	<string name="perferences_summary_dontsendgoogleapps">Exclude google/android applications from publishing application information</string>
 	<string name="perferences_summary_autostart">Application will be automatically started after device finished booting.</string>
 	<string name="perferences_summary_autoconnect">Automatically connect to MAP-Server at startup</string>
+	<string name="preferences_summary_serverForm">Switch between iMonitor or IF-MAP based monitoring</string>
 	<string name="preferences_summary_serverip">IP-Address of the target MAP-Server</string>
 	<string name="preferences_summary_serverport">Port Number of the target MAP-Server</string>
 	<string name="preferences_summary_username">Username for basic authentication</string>
 	<string name="preferences_summary_password">Password for basic authentication</string>
+	<string name="preferences_summary_imonitorpassword">Password for NSCA</string>
+	<string name="preferences_summary_cryptPref">Encryption mode of NSCA communication</string>
 	<string name="preferences_summary_allowunsafe">Allow "unsafe" SSL-Connection. When activated, the peer-certificate-check will be skipped. Recommended for testing and debugging.</string>
 	<string name="preferences_summary_basicauth">Use basic-authentication mode. Requires username and password. If disabled, make sure that your peer knows about your certificate!</string>
 	<string name="preferences_summary_logpublishcharacteristics">Enable logging of publish-characteristics messages</string>
@@ -74,11 +78,14 @@
 	<string name="preferences_title_dontsendgoogleapps">Dont send google-apps infos</string>
 	<string name="preferences_title_autostart">Enable auto-start</string>
 	<string name="preferences_title_autoconnect">Enable auto-connect</string>
+	<string name="preferences_title_serverPref">Monitoring-Mode</string>
 	<string name="preferences_title_serverip">Server IP-Address</string>
 	<string name="preferences_title_serverport">Server Port-Number</string>
 	<string name="preferences_title_username">Username</string>
 	<string name="preferences_title_password">Password</string>
 	<string name="preferences_title_allowunsafe">allow unsafe SSL</string>
+	<string name="preferences_title_imonitorauth">iMonitor-Authentication</string>
+	<string name="preferences_title_cryptPref">Encryption mode</string>
 	<string name="preferences_title_basicauth">Basic Authentication</string>
 	<string name="preferences_title_renewinterval">Renew-Request Interval</string>
 	<string name="preferences_title_permanentlyConnection">Connection-Type</string>

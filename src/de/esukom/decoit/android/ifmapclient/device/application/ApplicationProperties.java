@@ -20,6 +20,8 @@
  */
 package de.esukom.decoit.android.ifmapclient.device.application;
 
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -293,7 +295,7 @@ public class ApplicationProperties {
      *            string to search for
      * @return true, if list contains an entry that start with passed in search-striung
      */
-    private boolean runningProcessNamesListContainsStartWith(String searchString) {
+    public boolean runningProcessNamesListContainsStartWith(String searchString) {
         for (String currentEntry : getRunningAppProcessNamesAsStrings()) {
             if (searchString.startsWith(currentEntry)) {
                 return true;
@@ -321,4 +323,69 @@ public class ApplicationProperties {
 
         return returnList;
     }
+
+	/**
+	 * get percentage of used memory by a specific pid based on /proc/statm
+	 *
+	 * @param pid process id
+	 * @return memory usage of process
+	 */
+	private String getMemOfPid(int pid) {
+		String pidMem = null, totalMem = null;
+		String percentageMem;
+		RandomAccessFile statm = null, meminfo = null;
+
+		try {
+			statm = new RandomAccessFile("/proc/" + pid + "/statm", "r");
+			meminfo = new RandomAccessFile("/proc/meminfo", "r");
+
+			// resident set size of process
+			pidMem = statm.readLine().split(" ")[1];
+
+			// total memory (MemTotal: ...)
+			String[] splitMem = meminfo.readLine().split(" ");
+			totalMem = splitMem[splitMem.length -  2];
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (statm != null) {
+				try {
+					statm.close();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+			}
+			if (meminfo != null) {
+				try {
+					meminfo.close();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+			}
+		}
+
+		// used pages * page size / byte
+		int usedMem = Integer.parseInt(pidMem) * 4096 / 1024;
+
+		percentageMem = ((int) (usedMem / Float.parseFloat(totalMem) * 100))
+				+ "%";
+
+		return percentageMem;
+	}
+
+    /**
+     * get list of all running processes as {@link Process}
+     *
+     * @return list containing all runnning processes as Process
+     */
+	public List<Process> getProcesses() {
+		List<ActivityManager.RunningAppProcessInfo> processList = getRunningProcNames();
+		List<Process> returnList = new ArrayList<Process>();
+		
+		for(ActivityManager.RunningAppProcessInfo pInfo: processList) {
+			returnList.add(new Process(pInfo.pid, pInfo.processName, pInfo.uid, getMemOfPid(pInfo.pid)));
+		}
+
+		return returnList;
+	}
 }

@@ -1,6 +1,6 @@
 /* 
  * 
- * Toolbox.java       0.1.6 07/02/12
+ * Toolbox.java
  *
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -22,6 +22,7 @@
 package de.esukom.decoit.android.ifmapclient.util;
 
 import java.io.File;
+import java.io.StringWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -34,7 +35,11 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import de.esukom.decoit.android.ifmapclient.activities.MainActivity;
 import de.esukom.decoit.android.ifmapclient.activities.R;
 import de.esukom.decoit.android.ifmapclient.activities.TabLayout;
@@ -48,6 +53,7 @@ import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
  * Class for providing several Helper-Methods
  * 
  * @author Dennis Dunekacke, Decoit GmbH
+ * @author Markus Schölzel, Decoit GmbH
  * @version 0.1.6
  */
 public class Toolbox {
@@ -161,28 +167,28 @@ public class Toolbox {
      * @param String
      *            displayText displayed message
      */
-    public static void showNotification(String notifyText, String displayTitle, String displayText, Context appContext) {
-        // initialize notification manager
-        if (mNotificationManager == null) {
-            mNotificationManager = (NotificationManager) appContext.getSystemService(MainActivity.NOTIFICATION_SERVICE);
-        }
+    public static void showNotification(String notifyText, String displayTitle,
+			String displayText, Context appContext) {
 
-        // set notification about incoming response
-        final Notification notifyDetails = new Notification(R.drawable.icon, notifyText, System.currentTimeMillis());
-        // Context context = getApplicationContext();
-        CharSequence contentTitle = displayTitle;
-        CharSequence contentText = displayText;
-        Intent intentD = new Intent();
-        intentD.setClass(appContext, TabLayout.class);
+		// initialize notification manager
+		if (mNotificationManager == null) {
+			mNotificationManager = (NotificationManager) appContext
+					.getSystemService(MainActivity.NOTIFICATION_SERVICE);
+		}
 
-        // required for calling the existing activity instead of launching a new one
-        intentD.setAction(Intent.ACTION_MAIN);
-        intentD.addCategory(Intent.CATEGORY_LAUNCHER);
+		// set notification about incoming response
+		PendingIntent intent = PendingIntent.getActivity(appContext,
+				SIMPLE_NOTFICATION_ID,
+				(new Intent()).setClass(appContext, TabLayout.class),
+				PendingIntent.FLAG_UPDATE_CURRENT);
 
-        PendingIntent intent = PendingIntent.getActivity(appContext, 0, intentD, 0);
-        notifyDetails.setLatestEventInfo(appContext, contentTitle, contentText, intent);
-        mNotificationManager.notify(SIMPLE_NOTFICATION_ID, notifyDetails);
-    }
+		// using compat as easy way to stay compatible
+		Notification mNotification = new NotificationCompat.Builder(appContext)
+				.setContentTitle(displayTitle).setContentText(displayText)
+				.setContentIntent(intent).setSmallIcon(R.drawable.icon).build();
+
+		mNotificationManager.notify(SIMPLE_NOTFICATION_ID, mNotification);
+	}
 
     /**
      * delete last notification messagn
@@ -212,4 +218,27 @@ public class Toolbox {
         }
         return ret;
     }
+
+    /**
+     * JSONify Object to string
+     *
+     * @param input
+     * 				object to JSONify
+     *
+     * @return JSON string representation of input
+     */
+
+    public static String toJSON(Object input) {
+		StringWriter mJSON = new StringWriter();
+		ObjectMapper objectMapper = new ObjectMapper();
+
+		// generate JSON object
+		try {
+			objectMapper.writeValue(mJSON, input);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return mJSON.toString();
+	}
 }

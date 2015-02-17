@@ -21,13 +21,17 @@
 package de.esukom.decoit.android.ifmapclient.device.system;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Enumeration;
+import java.util.List;
 import java.util.regex.Matcher;
 
 import android.app.ActivityManager;
@@ -383,5 +387,82 @@ public class SystemProperties {
 	public static long getTxBytesOther() {
 		recalculateTraffic();
 		return mCurrentTxBytesOther;
+	}
+
+	/**
+	 * check current state of root
+	 *
+	 * @return true if rooted, otherwise false
+	 */
+	public boolean isRooted() {
+		boolean isRooted = false;
+
+		if (getPathOfBin("su") != null) {
+			isRooted = true;
+		}
+
+		return isRooted;
+	}
+
+	/**
+	 * check current state of selinux
+	 *
+	 * @return mode as string
+	 */
+	public String getSelinuxStatus() {
+		String cmd = "getenforce";
+		String execPath = getPathOfBin(cmd);
+		String selinuxStatus = null;
+
+		if (execPath != null) {
+			Process p = null;
+			BufferedReader in = null;
+
+			try {
+				p = Runtime.getRuntime().exec(execPath + File.separator + cmd);
+				in = new BufferedReader(new InputStreamReader(
+						p.getInputStream()));
+				while ((selinuxStatus = in.readLine()) == null) {
+				}
+			} catch (Exception e) {
+				Log.e("getenforce", "error in getting getenforce");
+			} finally {
+				try {
+					in.close();
+					p.destroy();
+				} catch (Exception e) {
+					Log.e("getenforce",
+							"error in closing and destroying getenforce process");
+				}
+			}
+		} else {
+			selinuxStatus = "unknown";
+		}
+
+		return selinuxStatus;
+	}
+	
+	/**
+	 * get path to executable
+	 *
+	 * @return path to executable
+	 */
+	private String getPathOfBin(String file) {
+		String path = null;
+		List<String> paths = new ArrayList<String>(Arrays.asList(System.getenv("PATH").split(
+				System.getProperty("path.separator"))));
+		
+		// add some more paths always worth looking at
+		String[] morePaths = { "/data/local", "/data/local/xbin", "/sbin",
+				"/system/bin", "/system/xbin", "/vendor/bin" };
+		paths.addAll(Arrays.asList(morePaths));
+		
+		for (String p : paths) {
+			if (new File(p + File.separator + file).canExecute()) {
+				path = p;
+				break;
+			}
+		}
+		return path;
 	}
 }
