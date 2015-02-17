@@ -496,12 +496,12 @@ public class MainActivity extends Activity {
 			Toolbox.logTxt(
 					this.getLocalClassName(),
 					"initializing of update interval from preferences failed...using default (60000)");
-			mPreferences.setRenewIntervalPreference(30000L);
+			mPreferences.setmUpdateInterval(60000L);
 		}
 		// check if update interval is above minimum, of not set it to
 		// default minimum value
 		if (mPreferences.getmUpdateInterval() < 60000L) {
-			mPreferences.setRenewIntervalPreference(60000L);
+			mPreferences.setmUpdateInterval(60000L);
 			Toolbox.logTxt(this.getLocalClassName(),
 					"configured update interval is to short...using default (60000)");
 		}
