@@ -2,7 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 	
-	<string name="app_name">IFMAP-Client</string>
+	<string name="app_name">DECOmap for Android</string>
 
 	<!-- Colors -->
 	<color name="bgrColor">#666666</color>
@@ -151,7 +151,7 @@
 	<string name="log_msgDialogBox_label">Message Content</string>
 	
 	<!-- About-Info-Tab -->
-	<string name="info_name">Android IF-MAP Client</string>
+	<string name="info_name">DECOmap for Android</string>
 	<string name="info_version">Version 0.1.6</string>
 	<string name="info_copyright">© 2012 Decoit GmbH</string>
 	<string name="info_license">Released under Apache License, Version 2.0</string>
@@ -166,8 +166,8 @@
 	<string name="quit_app">Quit</string>
 	
 	<!-- notification messages -->
-	<string name="notification_initial_messgae">IF-MAP-Client initialized</string>
-	<string name="notification_initial_label">IF-MAP-Client started</string>
+	<string name="notification_initial_messgae">DECOmap for Android initialized</string>
+	<string name="notification_initial_label">DECOmap for Android started</string>
 	<string name="main_notification_message_label">Incoming MAPS-Response</string>
 	<string name="main_notification_message_message">Response Message from SRC</string>
 	
