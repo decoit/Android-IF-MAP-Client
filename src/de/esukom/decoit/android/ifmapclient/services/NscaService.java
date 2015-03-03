@@ -56,6 +56,8 @@ public class NscaService extends Service {
 	private Encryption mServerEnc;
 	private NagiosSettings mNagiosSettings;
 	private NagiosPassiveCheckSender sender;
+	
+	private boolean readyToSend = false;
 
 	private Handler mMonitorHandler;
 	private long mMonitorInterval;
@@ -88,7 +90,8 @@ public class NscaService extends Service {
 	public void publish(String event) {
 		NscaPublishThread mNscaPublishThread = new NscaPublishThread();
 
-		mNscaPublishThread.execute(event);
+		if(readyToSend)
+			mNscaPublishThread.execute(event);
 	}
 
 	/**
@@ -137,6 +140,7 @@ public class NscaService extends Service {
 					.create();
 
 			sender = new NagiosPassiveCheckSender(mNagiosSettings);
+			readyToSend = true;
 			return null;
 		}
 
@@ -160,6 +164,7 @@ public class NscaService extends Service {
 				e.printStackTrace();
 			} catch (IOException e) {
 				generateIntent("ConnectionError");
+				readyToSend = false;
 			}
 			return null;
 		}

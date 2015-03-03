@@ -274,7 +274,7 @@ public class MainActivity extends Activity {
 				initConnection();
 				startConnectionService();
 			} else {
-					mConnectButton.performClick();
+					connectNSCA();
 			}
 		}
 
@@ -673,20 +673,7 @@ public class MainActivity extends Activity {
 		if (mIsConnected) {
 			switch (view.getId()) {
 			case R.id.Disconnect_Button:
-				mNscaServiceBind.stopMonitor();
-				getApplicationContext().unbindService(mNscaConnection);
-
-				mConnectButton.setEnabled(true);
-				mDisconnectButton.setEnabled(false);
-				mIsConnected = false;
-				mStatusMessageField.append("\n"
-						+ getResources().getString(
-								R.string.main_status_message_prefix) + " "
-						+ "disconnected.");
-				
-				PreferencesValues.sLockPreferences = false;
-				PreferencesValues.sLockConnectionPreferences = false;
-				PreferencesValues.sLockIMonitorPreferences = false;
+				disconnectNSCA();
 
 				break;
 			}
@@ -696,38 +683,61 @@ public class MainActivity extends Activity {
 		else {
 			switch (view.getId()) {
 			case R.id.Connect_Button:
-				// start connection service if all required preferences are set
-				if (!validatePreferences()) {
-					mStatusMessageField.append("\n"
-							+ getResources().getString(
-									R.string.main_status_message_errorprefix)
-							+ " "
-							+ getResources().getString(
-									R.string.main_default_wrongconfig_message));
-				} else {
-					// set status message to-text-output-field
-					mStatusMessageField.append("\n"
-							+ getResources().getString(
-									R.string.main_status_message_prefix) + " "
-							+ "Sending data to "
-							+ mPreferences.getServerIpPreference() + ":"
-							+ mPreferences.getServerPortPreference());
-					getApplicationContext().bindService(
-							new Intent(this, NscaService.class),
-							mNscaConnection, Context.BIND_AUTO_CREATE);
-					
-					PreferencesValues.sLockPreferences = true;
-					PreferencesValues.sLockConnectionPreferences = true;
-					PreferencesValues.sLockIMonitorPreferences = true;
-					
-					mIsConnected = true;
-					mConnectButton.setEnabled(false);
-					mDisconnectButton.setEnabled(true);
-				}
+				connectNSCA();
 
 				break;
 			}
 		}
+	}
+
+	private void connectNSCA() {
+		// start connection service if all required preferences are set
+		if (!validatePreferences()) {
+			mStatusMessageField.append("\n"
+					+ getResources().getString(
+							R.string.main_status_message_errorprefix)
+					+ " "
+					+ getResources().getString(
+							R.string.main_default_wrongconfig_message));
+		} else {
+			// set status message to-text-output-field
+			mStatusMessageField.append("\n"
+					+ getResources().getString(
+							R.string.main_status_message_prefix) + " "
+					+ "Sending data to "
+					+ mPreferences.getServerIpPreference() + ":"
+					+ mPreferences.getServerPortPreference());
+
+			mIsBound = BinderClass.doBindNscaService(getApplicationContext(),
+					mNscaConnection);
+			
+			PreferencesValues.sLockPreferences = true;
+			PreferencesValues.sLockConnectionPreferences = true;
+			PreferencesValues.sLockIMonitorPreferences = true;
+			
+			mIsConnected = true;
+			mConnectButton.setEnabled(false);
+			mDisconnectButton.setEnabled(true);
+		}
+	}
+
+	private void disconnectNSCA() {
+		mNscaServiceBind.stopMonitor();
+		if(mIsBound)
+			mIsBound = UnbinderClass.doUnbindConnectionService(
+					getApplicationContext(), mNscaConnection, myProgressDialog,
+					mIsBound);
+		mConnectButton.setEnabled(true);
+		mDisconnectButton.setEnabled(false);
+		mIsConnected = false;
+		mStatusMessageField.append("\n"
+				+ getResources().getString(
+						R.string.main_status_message_prefix) + " "
+				+ "disconnected.");
+		
+		PreferencesValues.sLockPreferences = false;
+		PreferencesValues.sLockConnectionPreferences = false;
+		PreferencesValues.sLockIMonitorPreferences = false;
 	}
 
 	private void mainTabButtonHandlerIfmap(View view) {
@@ -1271,7 +1281,6 @@ public class MainActivity extends Activity {
 	        mNscaServiceBind.publish(eP.genAppEvents());
 
 	        mNscaServiceBind.startMonitor(mPreferences.getmUpdateInterval());
-	        mIsBound = true;
 	    }
 
 	    public void onServiceDisconnected(ComponentName arg0) {
@@ -1309,7 +1318,7 @@ public class MainActivity extends Activity {
 									+ getResources()
 											.getString(
 													R.string.main_default_connectionerror_nsca));
-					mDisconnectButton.performClick();
+					disconnectNSCA();
 					break;
 				}
 			}

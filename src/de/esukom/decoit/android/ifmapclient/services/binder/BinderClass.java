@@ -23,6 +23,7 @@ package de.esukom.decoit.android.ifmapclient.services.binder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import de.esukom.decoit.android.ifmapclient.services.NscaService;
 import de.esukom.decoit.android.ifmapclient.services.PermanentConnectionService;
 import de.esukom.decoit.android.ifmapclient.services.RenewConnectionService;
 import de.esukom.decoit.android.ifmapclient.util.Toolbox;
@@ -47,6 +48,13 @@ public class BinderClass {
     public static boolean doBindPermConnectionService(Context applicationContext, ServiceConnection connectionService) {
         Toolbox.logTxt(UnbinderClass.class.getName(), "Binding Service: PermanentConnectionService");
         applicationContext.bindService(new Intent(applicationContext, PermanentConnectionService.class), connectionService,
+                Context.BIND_AUTO_CREATE);
+        return true;
+    }
+
+    public static boolean doBindNscaService(Context applicationContext, ServiceConnection connectionService) {
+        Toolbox.logTxt(UnbinderClass.class.getName(), "Binding Service: NscaService");
+        applicationContext.bindService(new Intent(applicationContext, NscaService.class), connectionService,
                 Context.BIND_AUTO_CREATE);
         return true;
     }
