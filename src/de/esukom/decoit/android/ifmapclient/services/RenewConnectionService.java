@@ -32,7 +32,7 @@ import de.esukom.decoit.android.ifmapclient.logging.LogMessageHelper;
 import de.esukom.decoit.android.ifmapclient.messaging.MessageHandler;
 import de.esukom.decoit.android.ifmapclient.messaging.ResponseParameters;
 import de.esukom.decoit.android.ifmapclient.util.Toolbox;
-import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
+import de.hshannover.f4.trust.ifmapj.messages.PublishRequest;
 
 /**
  * Local Service for sending synchronous If-Map SOAP Messages and receiving

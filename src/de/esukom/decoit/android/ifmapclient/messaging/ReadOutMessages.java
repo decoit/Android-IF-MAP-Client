@@ -25,11 +25,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
+
 import android.util.Log;
-import de.fhhannover.inform.trust.ifmapj.messages.*;
+import de.hshannover.f4.trust.ifmapj.messages.PublishElement;
+import de.hshannover.f4.trust.ifmapj.messages.PublishRequest;
+import de.hshannover.f4.trust.ifmapj.messages.PublishUpdate;
 
 /**
  * This Class read out requests and response messages.

@@ -49,22 +49,22 @@ import de.esukom.decoit.android.ifmapclient.preferences.PreferencesValues;
 import de.esukom.decoit.android.ifmapclient.util.CryptoUtil;
 import de.esukom.decoit.android.ifmapclient.util.DateUtil;
 import de.esukom.decoit.android.ifmapclient.util.Toolbox;
-import de.fhhannover.inform.trust.ifmapj.IfmapJ;
-import de.fhhannover.inform.trust.ifmapj.binding.IfmapStrings;
-import de.fhhannover.inform.trust.ifmapj.identifier.Device;
-import de.fhhannover.inform.trust.ifmapj.identifier.Identifier;
-import de.fhhannover.inform.trust.ifmapj.identifier.Identifiers;
-import de.fhhannover.inform.trust.ifmapj.identifier.Identity;
-import de.fhhannover.inform.trust.ifmapj.identifier.IdentityType;
-import de.fhhannover.inform.trust.ifmapj.identifier.IpAddress;
-import de.fhhannover.inform.trust.ifmapj.messages.MetadataLifetime;
-import de.fhhannover.inform.trust.ifmapj.messages.PublishDelete;
-import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
-import de.fhhannover.inform.trust.ifmapj.messages.PublishUpdate;
-import de.fhhannover.inform.trust.ifmapj.messages.Requests;
-import de.fhhannover.inform.trust.ifmapj.metadata.Cardinality;
-import de.fhhannover.inform.trust.ifmapj.metadata.LocationInformation;
-import de.fhhannover.inform.trust.ifmapj.metadata.StandardIfmapMetadataFactory;
+import de.hshannover.f4.trust.ifmapj.IfmapJ;
+import de.hshannover.f4.trust.ifmapj.binding.IfmapStrings;
+import de.hshannover.f4.trust.ifmapj.identifier.Device;
+import de.hshannover.f4.trust.ifmapj.identifier.Identifier;
+import de.hshannover.f4.trust.ifmapj.identifier.Identifiers;
+import de.hshannover.f4.trust.ifmapj.identifier.Identity;
+import de.hshannover.f4.trust.ifmapj.identifier.IdentityType;
+import de.hshannover.f4.trust.ifmapj.identifier.IpAddress;
+import de.hshannover.f4.trust.ifmapj.messages.MetadataLifetime;
+import de.hshannover.f4.trust.ifmapj.messages.PublishDelete;
+import de.hshannover.f4.trust.ifmapj.messages.PublishRequest;
+import de.hshannover.f4.trust.ifmapj.messages.PublishUpdate;
+import de.hshannover.f4.trust.ifmapj.messages.Requests;
+import de.hshannover.f4.trust.ifmapj.metadata.Cardinality;
+import de.hshannover.f4.trust.ifmapj.metadata.LocationInformation;
+import de.hshannover.f4.trust.ifmapj.metadata.StandardIfmapMetadataFactory;
 
 /**
  * A generic class that generates message-parameters for the IfmapJ-lib

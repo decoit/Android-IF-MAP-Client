@@ -23,10 +23,11 @@ package de.esukom.decoit.android.ifmapclient.services.local;
 
 import android.os.Handler;
 import de.esukom.decoit.android.ifmapclient.activities.MainActivity;
+import de.esukom.decoit.android.ifmapclient.messaging.MessageHandler;
 import de.esukom.decoit.android.ifmapclient.preferences.PreferencesValues;
 import de.esukom.decoit.android.ifmapclient.services.PermanentConnectionService;
 import de.esukom.decoit.android.ifmapclient.services.RenewConnectionService;
-import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
+import de.hshannover.f4.trust.ifmapj.messages.PublishRequest;
 
 /**
  * Container-Class that holds several parameters that are required for creating

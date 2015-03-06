@@ -46,7 +46,7 @@ import de.esukom.decoit.android.ifmapclient.activities.TabLayout;
 import de.esukom.decoit.android.ifmapclient.messaging.MessageHandler;
 import de.esukom.decoit.android.ifmapclient.messaging.ReadOutMessages;
 import de.esukom.decoit.android.ifmapclient.preferences.PreferencesValues;
-import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
+import de.hshannover.f4.trust.ifmapj.messages.PublishRequest;
 
 
 /**

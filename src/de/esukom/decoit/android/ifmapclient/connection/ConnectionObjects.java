@@ -21,9 +21,9 @@
 
 package de.esukom.decoit.android.ifmapclient.connection;
 
-import de.fhhannover.inform.trust.ifmapj.channel.ARC;
-import de.fhhannover.inform.trust.ifmapj.channel.SSRC;
-import de.fhhannover.inform.trust.ifmapj.exception.InitializationException;
+import de.hshannover.f4.trust.ifmapj.channel.ARC;
+import de.hshannover.f4.trust.ifmapj.channel.SSRC;
+import de.hshannover.f4.trust.ifmapj.exception.InitializationException;
 
 /**
  * Container-Class for ConnectionObjects from ifmapj

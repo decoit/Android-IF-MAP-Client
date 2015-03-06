@@ -71,11 +71,11 @@ import de.esukom.decoit.android.ifmapclient.services.local.LocalServiceParameter
 import de.esukom.decoit.android.ifmapclient.services.local.LocalServicePermanent;
 import de.esukom.decoit.android.ifmapclient.services.local.LocalServiceSynchronous;
 import de.esukom.decoit.android.ifmapclient.util.Toolbox;
-import de.fhhannover.inform.trust.ifmapj.IfmapJ;
-import de.fhhannover.inform.trust.ifmapj.IfmapJHelper;
-import de.fhhannover.inform.trust.ifmapj.channel.SSRC;
-import de.fhhannover.inform.trust.ifmapj.exception.InitializationException;
-import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
+import de.hshannover.f4.trust.ifmapj.IfmapJ;
+import de.hshannover.f4.trust.ifmapj.IfmapJHelper;
+import de.hshannover.f4.trust.ifmapj.channel.SSRC;
+import de.hshannover.f4.trust.ifmapj.exception.InitializationException;
+import de.hshannover.f4.trust.ifmapj.messages.PublishRequest;
 
 /**
  * Main Activity wich handles the communication with the MAP-Server
@@ -557,7 +557,7 @@ public class MainActivity extends Activity {
 					// create ssrc-connection using basic-authentication
 					Toolbox.logTxt(this.getLocalClassName(),
 							"initializing ssrc-connecion using basic-auth");
-					sSsrcConnection = IfmapJ.createSSRC("https://"
+					sSsrcConnection = IfmapJ.createSsrc("https://"
 							+ mPreferences.getServerIpPreference() + ":"
 							+ mPreferences.getServerPortPreference(),
 							mPreferences.getUsernamePreference(), mPreferences
@@ -569,7 +569,7 @@ public class MainActivity extends Activity {
 					// create ssrc-connection using certificates
 					Toolbox.logTxt(this.getLocalClassName(),
 							"initializing ssrc-connecion using certificate-based-auth");
-					sSsrcConnection = IfmapJ.createSSRC("https://"
+					sSsrcConnection = IfmapJ.createSsrc("https://"
 							+ mPreferences.getServerIpPreference() + ":"
 							+ mPreferences.getServerPortPreference(),
 							IfmapJHelper.getKeyManagers(getResources()

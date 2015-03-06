@@ -21,16 +21,17 @@
 
 package de.esukom.decoit.android.ifmapclient.connection;
 
-import de.esukom.decoit.android.ifmapclient.messaging.MessageHandler;
-import de.esukom.decoit.android.ifmapclient.messaging.ReadOutMessages;
-import de.esukom.decoit.android.ifmapclient.services.RenewConnectionService;
-import de.esukom.decoit.android.ifmapclient.services.PermanentConnectionService;
-import de.fhhannover.inform.trust.ifmapj.channel.SSRC;
-import de.fhhannover.inform.trust.ifmapj.exception.IfmapErrorResult;
-import de.fhhannover.inform.trust.ifmapj.exception.IfmapException;
-import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import de.esukom.decoit.android.ifmapclient.messaging.MessageHandler;
+import de.esukom.decoit.android.ifmapclient.messaging.ReadOutMessages;
+import de.esukom.decoit.android.ifmapclient.services.PermanentConnectionService;
+import de.esukom.decoit.android.ifmapclient.services.RenewConnectionService;
+import de.hshannover.f4.trust.ifmapj.channel.SSRC;
+import de.hshannover.f4.trust.ifmapj.exception.IfmapErrorResult;
+import de.hshannover.f4.trust.ifmapj.exception.IfmapException;
+import de.hshannover.f4.trust.ifmapj.messages.PublishRequest;
 
 /**
  * Thread for Connecting to a map-server (by using the IfmapJ-lib)

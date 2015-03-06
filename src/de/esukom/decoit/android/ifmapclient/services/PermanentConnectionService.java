@@ -20,6 +20,11 @@
  */
 package de.esukom.decoit.android.ifmapclient.services;
 
+import android.app.Service;
+import android.content.Intent;
+import android.os.Binder;
+import android.os.Handler;
+import android.os.IBinder;
 import de.esukom.decoit.android.ifmapclient.activities.MainActivity;
 import de.esukom.decoit.android.ifmapclient.connection.SyncConnectionThread;
 import de.esukom.decoit.android.ifmapclient.logging.LogMessage;
@@ -27,12 +32,7 @@ import de.esukom.decoit.android.ifmapclient.logging.LogMessageHelper;
 import de.esukom.decoit.android.ifmapclient.messaging.MessageHandler;
 import de.esukom.decoit.android.ifmapclient.messaging.ResponseParameters;
 import de.esukom.decoit.android.ifmapclient.util.Toolbox;
-import de.fhhannover.inform.trust.ifmapj.messages.PublishRequest;
-import android.app.Service;
-import android.content.Intent;
-import android.os.Binder;
-import android.os.Handler;
-import android.os.IBinder;
+import de.hshannover.f4.trust.ifmapj.messages.PublishRequest;
 
 /**
  * Local Service for sending synchronous messages with a permanently connection
