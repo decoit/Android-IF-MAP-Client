@@ -1,5 +1,5 @@
 /* 
- * SMSObserver.java       0.1.6 07/02/12
+ * SMSObserver.java       0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -41,7 +41,7 @@ import de.simu.decoit.android.decomap.util.Toolbox;
 /**
  * Class to Observe SMS-Communication (incoming and outgoing)
  * 
- * @version 0.1.6
+ * @version 0.2
  * @author  Dennis Dunekacke, DECOIT GmbH
  */
 public class SMSObserver {

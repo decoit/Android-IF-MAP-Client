@@ -1,5 +1,5 @@
 /* 
- * LogMessage.java        0.1.6 07/02/12
+ * LogMessage.java        0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -24,7 +24,7 @@ package de.simu.decoit.android.decomap.logging;
  * Class representing a single Log-Message
  * 
  * @author Dennis Dunekacke, DECOIT GmbH
- * @version 0.1.6
+ * @version 0.2
  */
 public class LogMessage {
 	private int mId;

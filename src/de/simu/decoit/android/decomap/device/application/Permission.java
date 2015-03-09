@@ -1,5 +1,5 @@
 /* 
- * Permission.java        0.1.6 07/02/12
+ * Permission.java        0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -23,7 +23,7 @@ package de.simu.decoit.android.decomap.device.application;
 /**
  * class representing an permission
  * 
- * @version 0.1.6
+ * @version 0.2
  * @author Dennis Dunekacke, Decoit Gmbh
  */
 public class Permission {

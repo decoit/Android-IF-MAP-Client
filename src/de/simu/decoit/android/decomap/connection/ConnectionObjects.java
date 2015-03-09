@@ -1,5 +1,5 @@
 /*
- * ConnectionsObject.java        0.1.6. 12/03/07
+ * ConnectionsObject.java        0.2 2015-03-08
  *  
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -28,7 +28,7 @@ import de.hshannover.f4.trust.ifmapj.exception.InitializationException;
 /**
  * Container-Class for ConnectionObjects from ifmapj
  * 
- * @version 0.1.6
+ * @version 0.2
  * @author Marcel Jahnke, DECOIT GmbH
  */
 public class ConnectionObjects {

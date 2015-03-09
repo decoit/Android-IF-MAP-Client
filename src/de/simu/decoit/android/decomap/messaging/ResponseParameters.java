@@ -1,5 +1,5 @@
 /* 
- * ResponseParameters.java        0.1.6 07/02/12
+ * ResponseParameters.java        0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -26,7 +26,7 @@ package de.simu.decoit.android.decomap.messaging;
  * 
  * @author 	Dennis Dunekacke, DECOIT GmbH
  * @author	Marcel Jahnke, DECOIT GmbH
- * @version	0.1.6
+ * @version	0.2
  */
 public class ResponseParameters {
 

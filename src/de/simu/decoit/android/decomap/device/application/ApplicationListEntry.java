@@ -1,5 +1,5 @@
 /* 
- * ApplicationListEntry.java        0.1.6 07/02/12
+ * ApplicationListEntry.java        0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 /**
  * class representing an application-list-entry
  * 
- * @version 0.1.6.
+ * @version 0.2
  * @author Dennis Dunekacke, Decoit Gmbh
  */
 public class ApplicationListEntry {

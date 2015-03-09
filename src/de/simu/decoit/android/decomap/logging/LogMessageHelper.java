@@ -1,5 +1,5 @@
 /* 
- * LogMessageHelper.java        0.1.6 07/02/12
+ * LogMessageHelper.java        0.2 2015-03-08
  *  
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -32,7 +32,7 @@ import de.simu.decoit.android.decomap.preferences.PreferencesValues;
  * class for logging if-map-messages
  * 
  * @author Dennis Dunekacke, DECOIT GmbH
- * @version 0.1.6
+ * @version 0.2
  */
 public class LogMessageHelper {
 

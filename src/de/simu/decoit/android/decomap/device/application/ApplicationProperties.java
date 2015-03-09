@@ -1,5 +1,5 @@
 /* 
- * ApplicationProperties.java        0.1.6 07/02/12
+ * ApplicationProperties.java        0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -36,7 +36,7 @@ import android.content.pm.ResolveInfo;
 /**
  * class for reading out several properties from applications which are installed on the device
  * 
- * @version 0.1.6
+ * @version 0.2
  * @author Dennis Dunekacke, Decoit GmbH
  */
 public class ApplicationProperties {

@@ -1,5 +1,5 @@
 /*
- * LocalServicePermanent.java       0.1.6 07/02/12
+ * LocalServicePermanent.java       0.2 2015-03-08
  *   
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -35,7 +35,7 @@ import de.simu.decoit.android.decomap.services.PermanentConnectionService;
  * 
  * @author  Marcel Jahnke, DECOIT GmbH
  * @author  Dennis Dunekacke, Decoit GmbH
- * @version 0.1.6
+ * @version 0.2
  */
 public class LocalServicePermanent {
 

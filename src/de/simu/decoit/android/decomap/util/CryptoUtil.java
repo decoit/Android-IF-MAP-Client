@@ -1,5 +1,5 @@
 /* 
- * CryptoUtil.java        0.1.6 03/08/12
+ * CryptoUtil.java        0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -31,7 +31,7 @@ import android.util.Log;
  * Utility class that provides cryptographic algorithms.
  * 
  * @author Ingo Bente, Tobias Ruhe (FHH)
- * @version 0.1.6
+ * @version 0.2
  * 
  */
 public class CryptoUtil {

@@ -54,7 +54,7 @@ import de.simu.decoit.android.decomap.preferences.PreferencesValues;
  * 
  * @author Dennis Dunekacke, Decoit GmbH
  * @author Markus Schölzel, Decoit GmbH
- * @version 0.1.6
+ * @version 0.2
  */
 public class Toolbox {
 

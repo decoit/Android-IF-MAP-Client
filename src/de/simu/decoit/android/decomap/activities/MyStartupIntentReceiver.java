@@ -1,5 +1,5 @@
 /* 
- * MyStartupIntentReceiver.java        0.1.6. 12/03/07
+ * MyStartupIntentReceiver.java        0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -30,7 +30,7 @@ import android.preference.PreferenceManager;
 /**
  * broadcast-receiver, automatically starts the application
  * 
- * @version 0.1.6
+ * @version 0.2
  * @author  Dennis Dunekacke, DECOIT GmbH
  */
 public class MyStartupIntentReceiver extends BroadcastReceiver {

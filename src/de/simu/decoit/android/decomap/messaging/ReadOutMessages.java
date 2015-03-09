@@ -1,5 +1,5 @@
 /* 
- * ReadOutMessages.java        0.1.6 07/02/12
+ * ReadOutMessages.java        0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -39,7 +39,7 @@ import de.hshannover.f4.trust.ifmapj.messages.PublishUpdate;
  * This Class read out requests and response messages.
  * 
  * @author  Marcel Jahnke, DECOIT GmbH
- * @version 0.1.6
+ * @version 0.2
  */
 public class ReadOutMessages extends ArrayList<HashMap<String, String>> {
 

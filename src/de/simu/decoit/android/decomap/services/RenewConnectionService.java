@@ -1,5 +1,5 @@
 /* 
- * RenewConnectionService.java       0.1.6 07/02/12
+ * RenewConnectionService.java       0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -40,7 +40,7 @@ import de.simu.decoit.android.decomap.util.Toolbox;
  * 
  * @author Dennis Dunekacke, DECOIT GmbH
  * @author Marcel Jahnke, DECOIT GmbH
- * @version 0.1.6
+ * @version 0.2
  */
 public class RenewConnectionService extends Service {
 

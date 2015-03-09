@@ -1,5 +1,5 @@
 /* 
- * LogMessageTbl.java        0.1.6 07/02/12
+ * LogMessageTbl.java        0.2 2015-03-08
  *  
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -25,7 +25,7 @@ package de.simu.decoit.android.decomap.database.dao;
  * for the log-message table
  * 
  * @author 	Dennis Dunekacke, Decoit GmH
- * @version 0.1.6
+ * @version 0.2
  */
 public final class LogMessageTbl implements LogMessageColums {
 

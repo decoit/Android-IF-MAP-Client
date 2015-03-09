@@ -1,5 +1,5 @@
 /* 
- * PhoneProperties.java        0.1.6 07/02/12
+ * PhoneProperties.java        0.2 2015-03-08
  * 
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
@@ -28,7 +28,7 @@ import android.telephony.TelephonyManager;
  * due to differences in the android-sdk, the actual implementation of
  * this class is loaded at runtime via reflections
  * 
- * @version 0.1.6
+ * @version 0.2
  * @author Dennis Dunekacke, DECOIT GmbH
  */
 public abstract class PhoneProperties {

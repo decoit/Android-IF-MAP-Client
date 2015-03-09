@@ -1,5 +1,5 @@
 /* 
- * StatusActivity.java        0.1.6. 12/03/07
+ * StatusActivity.java        0.2 2015-03-08
  *  
  * Licensed to the Apache Software Foundation (ASF) under one 
  * or more contributor license agreements.  See the NOTICE file 
