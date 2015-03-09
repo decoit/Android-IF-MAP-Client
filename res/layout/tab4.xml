@@ -21,7 +21,7 @@
 
 	<ImageView android:id="@+id/ImageView01"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:background="@drawable/esukom_logo_full"
+		android:background="@drawable/simu_logo_full"
 		android:layout_gravity="center_horizontal" android:paddingTop="10px"></ImageView>
 		
 	<TextView android:id="@+id/TextView03" android:layout_width="wrap_content"

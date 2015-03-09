@@ -10,7 +10,7 @@
 	</string-array>
 	<string-array name="preferences_display_serverForm">
 		<item>Monitoring with iMonitor</item>
-		<item>Monitoring with ESUKOM/SIMU</item>
+		<item>Monitoring with SIMU</item>
 	</string-array>
 	<string-array name="preferences_value_serverForm">
 		<item>iMonitor</item>

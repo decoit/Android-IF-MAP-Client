@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="de.esukom.decoit.android.ifmapclient.activities"
+	package="de.simu.decoit.android.decomap.activities"
 	android:versionCode="1" android:versionName="0.1.6">
 
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -18,7 +18,7 @@
 	<uses-sdk android:targetSdkVersion="21" android:minSdkVersion="9"/>
 	
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<activity android:name="de.esukom.decoit.android.ifmapclient.activities.TabLayout"
+		<activity android:name="de.simu.decoit.android.decomap.activities.TabLayout"
 		android:screenOrientation="nosensor" android:configChanges="keyboardHidden|orientation"
 			android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar">
 			<intent-filter>
@@ -28,19 +28,19 @@
 		</activity>
 		
 		<activity
-			android:name="de.esukom.decoit.android.ifmapclient.activities.MainActivity" >
+			android:name="de.simu.decoit.android.decomap.activities.MainActivity" >
 		</activity>
 		
 		<activity
-			android:name="de.esukom.decoit.android.ifmapclient.activities.StatusActivity">
+			android:name="de.simu.decoit.android.decomap.activities.StatusActivity">
 		</activity>
 		
 		<activity
-			android:name="de.esukom.decoit.android.ifmapclient.activities.InfoActivity">
+			android:name="de.simu.decoit.android.decomap.activities.InfoActivity">
 		</activity>
 		
 			<activity
-			android:name="de.esukom.decoit.android.ifmapclient.activities.LogActivity">
+			android:name="de.simu.decoit.android.decomap.activities.LogActivity">
 		</activity>
 		
 		<activity
@@ -49,15 +49,15 @@
 		</activity>
 
 		<service android:enabled="true"
-			android:name="de.esukom.decoit.android.ifmapclient.services.RenewConnectionService">
+			android:name="de.simu.decoit.android.decomap.services.RenewConnectionService">
 		</service>
 
 		<service android:enabled="true"
-			android:name="de.esukom.decoit.android.ifmapclient.services.PermanentConnectionService">
+			android:name="de.simu.decoit.android.decomap.services.PermanentConnectionService">
 		</service>
 
 		<service
-		    android:name="de.esukom.decoit.android.ifmapclient.services.NscaService"
+		    android:name="de.simu.decoit.android.decomap.services.NscaService"
 		    android:enabled="true"
 		    android:exported="false" >
 		</service>
@@ -69,7 +69,7 @@
             </intent-filter>
 	    </receiver>
 	    
-	    <receiver android:name="de.esukom.decoit.android.ifmapclient.observer.camera.CameraReceiver" android:enabled="true"
+	    <receiver android:name="de.simu.decoit.android.decomap.observer.camera.CameraReceiver" android:enabled="true"
 			android:exported="false" >
         <intent-filter>
             <action android:name="com.android.camera.NEW_PICTURE" />
@@ -80,7 +80,7 @@
 		</receiver>
 
 		<receiver
-            android:name="de.esukom.decoit.android.ifmapclient.observer.app.AppReceiver"
+            android:name="de.simu.decoit.android.decomap.observer.app.AppReceiver"
             android:enabled="true"
             android:exported="false" >
             <intent-filter>
