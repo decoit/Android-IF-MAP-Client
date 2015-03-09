@@ -9,8 +9,8 @@
 		<item>Cellbroadcast</item>
 	</string-array>
 	<string-array name="preferences_display_serverForm">
-		<item>Monitoring with iMonitor</item>
-		<item>Monitoring with SIMU</item>
+		<item>iMonitor</item>
+		<item>SIMU</item>
 	</string-array>
 	<string-array name="preferences_value_serverForm">
 		<item>iMonitor</item>
