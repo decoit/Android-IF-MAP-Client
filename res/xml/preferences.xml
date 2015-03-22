@@ -15,8 +15,8 @@
 		<CheckBoxPreference android:title="@string/preferences_title_nonconformdata"
 			android:summary="@string/perferences_summary_nonconformdata"
 			android:defaultValue="true" android:key="nonConformDataPreferences" />
-		<CheckBoxPreference android:title="@string/preferences_title_sendsimuspecificapps"
-			android:summary="@string/perferences_summary_sendsimuspecificapps"
+		<CheckBoxPreference android:title="@string/preferences_title_sendesukomspecificapps"
+			android:summary="@string/perferences_summary_sendesukomspecificapps"
 			android:defaultValue="false" android:key="sendNoAppsPreferences" />
 		<CheckBoxPreference android:title="@string/preferences_title_dontsendgoogleapps"
 			android:summary="@string/perferences_summary_dontsendgoogleapps"

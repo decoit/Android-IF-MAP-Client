@@ -1122,14 +1122,14 @@ public class MainActivity extends Activity {
 		// add collected Log Messages from Request/Response to Log-Message-List
 		if (messageType == MessageHandler.MSG_TYPE_PUBLISH_CHARACTERISTICS
 				|| messageType == MessageHandler.MSG_TYPE_METADATA_UPDATE) {
-			// currently, the simu-specific data is to much for the db to
+			// currently, the esukom-specific data is too much for the db to
 			// handle
 			// so for now we disable logging in this case
 			if (mPreferences.isUseNonConformMetadata()) {
 				requestMsg
-						.setMsg("logging of simu specific metadata is currently not supported!\n");
+						.setMsg("logging of esukom specific metadata is currently not supported!\n");
 				responseMsg
-						.setMsg("logging of simu specific metadata is currently not supported!\n");
+						.setMsg("logging of esukom specific metadata is currently not supported!\n");
 			}
 		}
 		LogMessageHelper.getInstance().logMessage(messageType, requestMsg,

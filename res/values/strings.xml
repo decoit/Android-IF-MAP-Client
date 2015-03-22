@@ -43,8 +43,8 @@
 	<string name="messagehandler_mainstatus_message_invalidresponse">invalid response from server</string>
 
 	<!-- Preferences-Tab -->
-	<string name="perferences_summary_nonconformdata">Publish simu-specific metadata. This Option currently does not work (and has no effect) on devices running android versions prior 4.0 </string>
-	<string name="perferences_summary_sendsimuspecificapps">When publishing simu-specific metadata, dont send informations about installed applications. Improves performance.</string>
+	<string name="perferences_summary_nonconformdata">Publish esukom-specific metadata. This Option currently does not work (and has no effect) on devices running android versions prior 4.0 </string>
+	<string name="perferences_summary_sendesukomspecificapps">When publishing esukom-specific metadata, dont send informations about installed applications. Improves performance.</string>
 	<string name="perferences_summary_dontsendgoogleapps">Exclude google/android applications from publishing application information</string>
 	<string name="perferences_summary_autostart">Application will be automatically started after device finished booting.</string>
 	<string name="perferences_summary_autoconnect">Automatically connect to MAP-Server at startup</string>
@@ -73,8 +73,8 @@
 	<string name="preferences_summary_loginvalidresponse">Enable logging of invalid-response messages</string>
 	<string name="preferences_summary_applicationlogging">Write logging-messages to file</string>
 	<string name="preferences_summary_autoupdate">Enable autmatic publish of updated metadata</string>
-	<string name="preferences_title_nonconformdata">Use SIMU-Metadata</string>
-	<string name="preferences_title_sendsimuspecificapps">Dont send app infos</string>
+	<string name="preferences_title_nonconformdata">Use ESUKOM-Metadata</string>
+	<string name="preferences_title_sendesukomspecificapps">Dont send app infos</string>
 	<string name="preferences_title_dontsendgoogleapps">Dont send google-apps infos</string>
 	<string name="preferences_title_autostart">Enable auto-start</string>
 	<string name="preferences_title_autoconnect">Enable auto-connect</string>
