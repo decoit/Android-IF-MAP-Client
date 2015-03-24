@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Locale;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -72,7 +73,7 @@ public class ReadOutMessages extends ArrayList<HashMap<String, String>> {
                 PublishElement pE = pEColIt.next();
                 PublishUpdate pU = null;
 
-                if (pE.toString().toLowerCase().contains("update")) {
+                if (pE.toString().toLowerCase(Locale.ENGLISH).contains("update")) {
                     pU = (PublishUpdate) pE;
 
                     Collection<Document> metaData = pU.getMetadata();

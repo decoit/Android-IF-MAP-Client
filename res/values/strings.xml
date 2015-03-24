@@ -43,11 +43,11 @@
 	<string name="messagehandler_mainstatus_message_invalidresponse">invalid response from server</string>
 
 	<!-- Preferences-Tab -->
-	<string name="perferences_summary_nonconformdata">Publish esukom-specific metadata. This Option currently does not work (and has no effect) on devices running android versions prior 4.0 </string>
-	<string name="perferences_summary_sendesukomspecificapps">When publishing esukom-specific metadata, dont send informations about installed applications. Improves performance.</string>
-	<string name="perferences_summary_dontsendgoogleapps">Exclude google/android applications from publishing application information</string>
-	<string name="perferences_summary_autostart">Application will be automatically started after device finished booting.</string>
-	<string name="perferences_summary_autoconnect">Automatically connect to MAP-Server at startup</string>
+	<string name="preferences_summary_nonconformdata">Publish esukom-specific metadata. This Option currently does not work (and has no effect) on devices running android versions prior 4.0 </string>
+	<string name="preferences_summary_sendesukomspecificapps">When publishing esukom-specific metadata, dont send informations about installed applications. Improves performance.</string>
+	<string name="preferences_summary_dontsendgoogleapps">Exclude google/android applications from publishing application information</string>
+	<string name="preferences_summary_autostart">Application will be automatically started after device finished booting.</string>
+	<string name="preferences_summary_autoconnect">Automatically connect to MAP-Server at startup</string>
 	<string name="preferences_summary_serverForm">Switch between iMonitor or IF-MAP based monitoring</string>
 	<string name="preferences_summary_serverip">IP-Address of the target MAP-Server</string>
 	<string name="preferences_summary_serverport">Port Number of the target MAP-Server</string>
@@ -61,7 +61,7 @@
 	<string name="preferences_summary_renewinterval">Interval for sending renew-session request to MAP-Server (in milliseconds)</string>
 	<string name="preferences_summary_updateinterval">Interval for sending updated metadata to Server. This includes publishing of Device-Characteristics and Location-Data. Minimum (and default) is 60000 ms (1 minute)</string>
 	<string name="preferences_summary_disablelog">Disable logging of messages send to MAP-Server</string>
-	<string name="perferences_summary_permanentlyConnection">Enables a permanent connection with the MAP-Server. If disabled, the client will periodically send "renew" requests to keep the session alive.</string>
+	<string name="preferences_summary_permanentlyConnection">Enables a permanent connection with the MAP-Server. If disabled, the client will periodically send "renew" requests to keep the session alive.</string>
 	<string name="preferences_summary_locationTracking">Enables location-tracking</string>
 	<string name="preferences_summary_locationForm">Switch between Cell-Based or GPS-Based Location-Tracking</string>
 	<string name="preferences_summary_logrenewrequest">Enable logging of renew-request messages</string>

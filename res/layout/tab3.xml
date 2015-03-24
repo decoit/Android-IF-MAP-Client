@@ -5,7 +5,7 @@
 	android:id="@+id/ScrollViewTab3" android:layout_width="fill_parent"
 	android:layout_height="wrap_content" android:fillViewport="true">
 	<LinearLayout
-		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
 		android:id="@+id/statusTabLayout" android:orientation="vertical"
 		android:paddingLeft="5dip" android:paddingRight="5dip"
 		android:paddingTop="5dip" >

@@ -4,22 +4,22 @@
 	<PreferenceCategory android:title="Application Settings"
 		android:enabled="true" android:key="applicationSettings">
 		<CheckBoxPreference android:title="@string/preferences_title_autostart"
-			android:summary="@string/perferences_summary_autostart"
+			android:summary="@string/preferences_summary_autostart"
 			android:defaultValue="false" android:key="autostartPreferences" />
 		<CheckBoxPreference android:title="@string/preferences_title_autoconnect"
-			android:summary="@string/perferences_summary_autoconnect"
+			android:summary="@string/preferences_summary_autoconnect"
 			android:defaultValue="false" android:key="autoconnectPreferences" />
 		<CheckBoxPreference android:title="@string/preferences_title_autoupdate"
 			android:summary="@string/preferences_summary_autoupdate"
 			android:defaultValue="true" android:key="autoUpdate" />
 		<CheckBoxPreference android:title="@string/preferences_title_nonconformdata"
-			android:summary="@string/perferences_summary_nonconformdata"
+			android:summary="@string/preferences_summary_nonconformdata"
 			android:defaultValue="true" android:key="nonConformDataPreferences" />
 		<CheckBoxPreference android:title="@string/preferences_title_sendesukomspecificapps"
-			android:summary="@string/perferences_summary_sendesukomspecificapps"
+			android:summary="@string/preferences_summary_sendesukomspecificapps"
 			android:defaultValue="false" android:key="sendNoAppsPreferences" />
 		<CheckBoxPreference android:title="@string/preferences_title_dontsendgoogleapps"
-			android:summary="@string/perferences_summary_dontsendgoogleapps"
+			android:summary="@string/preferences_summary_dontsendgoogleapps"
 			android:defaultValue="true" android:key="sendNoGoogleAppsPreferences" />		
 		<EditTextPreference android:name="Update Interval"
 			android:summary="@string/preferences_summary_updateinterval"
@@ -79,7 +79,7 @@
 	<PreferenceCategory android:title="Connection Settings"
 		android:enabled="true" android:key="connectionSettings">
 		<CheckBoxPreference android:title="@string/preferences_title_permanentlyConnection"
-			android:summary="@string/perferences_summary_permanentlyConnection"
+			android:summary="@string/preferences_summary_permanentlyConnection"
 			android:defaultValue="true" android:key="permanantlyConectionPreferences" />
 		<EditTextPreference android:name="RenewInterval"
 			android:summary="@string/preferences_title_renewinterval"
