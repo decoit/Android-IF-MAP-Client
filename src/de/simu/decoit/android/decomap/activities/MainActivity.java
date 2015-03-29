@@ -734,7 +734,12 @@ public class MainActivity extends Activity {
 				+ getResources().getString(
 						R.string.main_status_message_prefix) + " "
 				+ "disconnected.");
-		
+		Toolbox.showNotification(
+				getResources().getString(R.string.notification_nsca_label),
+				getResources().getString(R.string.notification_nsca_label),
+				getResources().getString(R.string.notification_disconnect),
+				getApplicationContext());
+
 		PreferencesValues.sLockPreferences = false;
 		PreferencesValues.sLockConnectionPreferences = false;
 		PreferencesValues.sLockIMonitorPreferences = false;

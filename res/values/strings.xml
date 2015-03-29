@@ -170,6 +170,8 @@
 	<string name="notification_initial_label">DECOmap for Android started</string>
 	<string name="main_notification_message_label">Incoming MAPS-Response</string>
 	<string name="main_notification_message_message">Response Message from SRC</string>
+	<string name="notification_nsca_label">iMonitor-Connection</string>
+	<string name="notification_disconnect">Client disconnected ...</string>
 	
 	<!-- error messages -->
 	<string name="serialized_response_errormsg_null">no connection object found</string>
