@@ -18,11 +18,13 @@ Content:
 ------------
 Developed within the ESUKOM-Project in 2011 by Decoit GmbH (http://www.decoit.de/)
 More Information can be found on the ESUKOM-Project Website (http://www.esukom.de/)
+Updated within the SIMU-Project in 2015 by Decoit GmbH (http://www.decoit.de/)
+More Information can be found on the SIMU-Project Website (hhttp://simu-project.de/)
 
 
 2 - License:
 ------------
-Copyright 2014 Decoit GmbH
+Copyright 2015 Decoit GmbH
 
 Licensed to the Apache Software Foundation (ASF) under one   
 or more contributor license agreements.  See the NOTICE file  
@@ -210,3 +212,10 @@ Version 0.1.6.2:
 
 -> Device-Identifer has now the device-MAC-Address as value. This is required
    in order to work with the Detection-Engine
+
+Version 0.2:
+
+-> add support for iMonitor (http://www.imonitor-project.de)
+-> fix some bugs (see git log for changes)
+-> rename to "DECOmap for Android"
+-> change naming and artwork according to SIMU-style

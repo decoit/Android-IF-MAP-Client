@@ -2,7 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 	
-	<string name="app_name">IFMAP-Client</string>
+	<string name="app_name">DECOmap for Android</string>
 
 	<!-- Colors -->
 	<color name="bgrColor">#666666</color>
@@ -26,6 +26,7 @@
 	<string name="main_ButtonHandler">mainTabButtonHandler</string>
 	<string name="main_default_wrongconfig_message">error while validating preferences…please check them</string>
 	<string name="main_default_connectiontimeout_message">Connection Timeout - No Response from MAP-Server!</string>
+	<string name="main_default_connectionerror_nsca">Connection Error - Check your connection preferences!</string>
 	<string name="main_progressbar_message_srcrequest_1">Please Wait…</string>
 	<string name="main_progressbar_message_srcrequest_2">Executing Request</string>
 	<string name="main_label_status_message">Status Message:</string>
@@ -42,22 +43,25 @@
 	<string name="messagehandler_mainstatus_message_invalidresponse">invalid response from server</string>
 
 	<!-- Preferences-Tab -->
-	<string name="perferences_summary_nonconformdata">Publish esukom-specific metadata. This Option currently does not work (and has no effect) on devices running android versions prior 4.0 </string>
-	<string name="perferences_summary_sendesukomspecificapps">When publishing esukom-specific metadata, dont send informations about installed applications. Improves performance.</string>
-	<string name="perferences_summary_dontsendgoogleapps">Exclude google/android applications from publishing application information</string>
-	<string name="perferences_summary_autostart">Application will be automatically started after device finished booting.</string>
-	<string name="perferences_summary_autoconnect">Automatically connect to MAP-Server at startup</string>
+	<string name="preferences_summary_nonconformdata">Publish esukom-specific metadata. This Option currently does not work (and has no effect) on devices running android versions prior 4.0 </string>
+	<string name="preferences_summary_sendesukomspecificapps">When publishing esukom-specific metadata, dont send informations about installed applications. Improves performance.</string>
+	<string name="preferences_summary_dontsendgoogleapps">Exclude google/android applications from publishing application information</string>
+	<string name="preferences_summary_autostart">Application will be automatically started after device finished booting.</string>
+	<string name="preferences_summary_autoconnect">Automatically connect to MAP-Server at startup</string>
+	<string name="preferences_summary_serverForm">Switch between iMonitor or IF-MAP based monitoring</string>
 	<string name="preferences_summary_serverip">IP-Address of the target MAP-Server</string>
 	<string name="preferences_summary_serverport">Port Number of the target MAP-Server</string>
 	<string name="preferences_summary_username">Username for basic authentication</string>
 	<string name="preferences_summary_password">Password for basic authentication</string>
+	<string name="preferences_summary_imonitorpassword">Password for NSCA</string>
+	<string name="preferences_summary_cryptPref">Encryption mode of NSCA communication</string>
 	<string name="preferences_summary_allowunsafe">Allow "unsafe" SSL-Connection. When activated, the peer-certificate-check will be skipped. Recommended for testing and debugging.</string>
 	<string name="preferences_summary_basicauth">Use basic-authentication mode. Requires username and password. If disabled, make sure that your peer knows about your certificate!</string>
 	<string name="preferences_summary_logpublishcharacteristics">Enable logging of publish-characteristics messages</string>
 	<string name="preferences_summary_renewinterval">Interval for sending renew-session request to MAP-Server (in milliseconds)</string>
 	<string name="preferences_summary_updateinterval">Interval for sending updated metadata to Server. This includes publishing of Device-Characteristics and Location-Data. Minimum (and default) is 60000 ms (1 minute)</string>
 	<string name="preferences_summary_disablelog">Disable logging of messages send to MAP-Server</string>
-	<string name="perferences_summary_permanentlyConnection">Enables a permanent connection with the MAP-Server. If disabled, the client will periodically send "renew" requests to keep the session alive.</string>
+	<string name="preferences_summary_permanentlyConnection">Enables a permanent connection with the MAP-Server. If disabled, the client will periodically send "renew" requests to keep the session alive.</string>
 	<string name="preferences_summary_locationTracking">Enables location-tracking</string>
 	<string name="preferences_summary_locationForm">Switch between Cell-Based or GPS-Based Location-Tracking</string>
 	<string name="preferences_summary_logrenewrequest">Enable logging of renew-request messages</string>
@@ -69,16 +73,19 @@
 	<string name="preferences_summary_loginvalidresponse">Enable logging of invalid-response messages</string>
 	<string name="preferences_summary_applicationlogging">Write logging-messages to file</string>
 	<string name="preferences_summary_autoupdate">Enable autmatic publish of updated metadata</string>
-	<string name="preferences_title_nonconformdata">Use Esukom-Metadata</string>
+	<string name="preferences_title_nonconformdata">Use ESUKOM-Metadata</string>
 	<string name="preferences_title_sendesukomspecificapps">Dont send app infos</string>
 	<string name="preferences_title_dontsendgoogleapps">Dont send google-apps infos</string>
 	<string name="preferences_title_autostart">Enable auto-start</string>
 	<string name="preferences_title_autoconnect">Enable auto-connect</string>
+	<string name="preferences_title_serverPref">Monitoring-Mode</string>
 	<string name="preferences_title_serverip">Server IP-Address</string>
 	<string name="preferences_title_serverport">Server Port-Number</string>
 	<string name="preferences_title_username">Username</string>
 	<string name="preferences_title_password">Password</string>
 	<string name="preferences_title_allowunsafe">allow unsafe SSL</string>
+	<string name="preferences_title_imonitorauth">iMonitor-Authentication</string>
+	<string name="preferences_title_cryptPref">Encryption mode</string>
 	<string name="preferences_title_basicauth">Basic Authentication</string>
 	<string name="preferences_title_renewinterval">Renew-Request Interval</string>
 	<string name="preferences_title_permanentlyConnection">Connection-Type</string>
@@ -144,11 +151,11 @@
 	<string name="log_msgDialogBox_label">Message Content</string>
 	
 	<!-- About-Info-Tab -->
-	<string name="info_name">Android IF-MAP Client</string>
-	<string name="info_version">Version 0.1.6</string>
-	<string name="info_copyright">© 2012 Decoit GmbH</string>
+	<string name="info_name">DECOmap for Android</string>
+	<string name="info_version">Version 0.2</string>
+	<string name="info_copyright">© 2015 Decoit GmbH</string>
 	<string name="info_license">Released under Apache License, Version 2.0</string>
-	<string name="info_label_openwebsite">Visit Esukom-Project Website</string>
+	<string name="info_label_openwebsite">Visit SIMU-Project Website</string>
 	<string name="info_ButtonHandler">infoTabButtonHandler</string>
 	
 	<!-- toast messages -->
@@ -159,10 +166,12 @@
 	<string name="quit_app">Quit</string>
 	
 	<!-- notification messages -->
-	<string name="notification_initial_messgae">IF-MAP-Client initialized</string>
-	<string name="notification_initial_label">IF-MAP-Client started</string>
+	<string name="notification_initial_messgae">DECOmap for Android initialized</string>
+	<string name="notification_initial_label">DECOmap for Android started</string>
 	<string name="main_notification_message_label">Incoming MAPS-Response</string>
 	<string name="main_notification_message_message">Response Message from SRC</string>
+	<string name="notification_nsca_label">iMonitor-Connection</string>
+	<string name="notification_disconnect">Client disconnected ...</string>
 	
 	<!-- error messages -->
 	<string name="serialized_response_errormsg_null">no connection object found</string>

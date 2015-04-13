@@ -4,22 +4,22 @@
 	<PreferenceCategory android:title="Application Settings"
 		android:enabled="true" android:key="applicationSettings">
 		<CheckBoxPreference android:title="@string/preferences_title_autostart"
-			android:summary="@string/perferences_summary_autostart"
+			android:summary="@string/preferences_summary_autostart"
 			android:defaultValue="false" android:key="autostartPreferences" />
 		<CheckBoxPreference android:title="@string/preferences_title_autoconnect"
-			android:summary="@string/perferences_summary_autoconnect"
+			android:summary="@string/preferences_summary_autoconnect"
 			android:defaultValue="false" android:key="autoconnectPreferences" />
 		<CheckBoxPreference android:title="@string/preferences_title_autoupdate"
 			android:summary="@string/preferences_summary_autoupdate"
 			android:defaultValue="true" android:key="autoUpdate" />
 		<CheckBoxPreference android:title="@string/preferences_title_nonconformdata"
-			android:summary="@string/perferences_summary_nonconformdata"
+			android:summary="@string/preferences_summary_nonconformdata"
 			android:defaultValue="true" android:key="nonConformDataPreferences" />
 		<CheckBoxPreference android:title="@string/preferences_title_sendesukomspecificapps"
-			android:summary="@string/perferences_summary_sendesukomspecificapps"
+			android:summary="@string/preferences_summary_sendesukomspecificapps"
 			android:defaultValue="false" android:key="sendNoAppsPreferences" />
 		<CheckBoxPreference android:title="@string/preferences_title_dontsendgoogleapps"
-			android:summary="@string/perferences_summary_dontsendgoogleapps"
+			android:summary="@string/preferences_summary_dontsendgoogleapps"
 			android:defaultValue="true" android:key="sendNoGoogleAppsPreferences" />		
 		<EditTextPreference android:name="Update Interval"
 			android:summary="@string/preferences_summary_updateinterval"
@@ -30,6 +30,11 @@
 	
 	<PreferenceCategory android:title="Server Settings"
 		android:enabled="true" android:key="serverSettings">
+		<ListPreference android:title="@string/preferences_title_serverPref"
+			android:summary="@string/preferences_summary_serverForm"
+			android:key="serverPref" android:entries="@array/preferences_display_serverForm"
+			android:entryValues="@array/preferences_value_serverForm"
+			android:defaultValue="IF-MAP" />
 		<EditTextPreference android:name="Server IP-Address"
 			android:summary="@string/preferences_summary_serverip"
 			android:defaultValue="127.0.0.1" android:title="@string/preferences_title_serverip"
@@ -41,6 +46,20 @@
 		
 	</PreferenceCategory>
 	
+	<PreferenceCategory android:enabled="true"
+		android:title="iMonitor-Encryption" android:key="imonitorSettings">
+		<EditTextPreference android:name="Password"
+			android:summary="@string/preferences_summary_imonitorpassword"
+			android:defaultValue="icinga" android:title="@string/preferences_title_password"
+			android:inputType="textPassword"
+			android:key="nscaPassPreference" />
+		<ListPreference android:title="@string/preferences_title_cryptPref"
+			android:summary="@string/preferences_summary_cryptPref"
+			android:key="nscaEncPref" android:entries="@array/preferences_display_cryptForm"
+			android:entryValues="@array/preferences_value_cryptForm"
+			android:defaultValue="1" />
+	</PreferenceCategory>
+
 	<PreferenceCategory android:enabled="true"
 		android:title="Basic-Authentication" android:key="userSettings">
 			<CheckBoxPreference android:title="@string/preferences_title_basicauth"
@@ -60,7 +79,7 @@
 	<PreferenceCategory android:title="Connection Settings"
 		android:enabled="true" android:key="connectionSettings">
 		<CheckBoxPreference android:title="@string/preferences_title_permanentlyConnection"
-			android:summary="@string/perferences_summary_permanentlyConnection"
+			android:summary="@string/preferences_summary_permanentlyConnection"
 			android:defaultValue="true" android:key="permanantlyConectionPreferences" />
 		<EditTextPreference android:name="RenewInterval"
 			android:summary="@string/preferences_title_renewinterval"

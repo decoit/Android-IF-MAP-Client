@@ -10,6 +10,7 @@
 		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
 		android:text="@string/info_name" android:textColor="@color/lblColor"
 		android:textAppearance="@color/bgrColor" android:textStyle="bold"
+		style="@android:style/TextAppearance.Large"
 		android:typeface="normal"></TextView>
 
 
@@ -17,17 +18,19 @@
 		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
 		android:text="@string/info_version" android:textColor="@color/lblColor"
 		android:textAppearance="@color/bgrColor" android:textStyle="normal"
+		style="@android:style/TextAppearance.Large"
 		android:typeface="normal" android:paddingTop="10px"></TextView>
 
 	<ImageView android:id="@+id/ImageView01"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:background="@drawable/esukom_logo_full"
+		android:background="@drawable/simu_logo_full"
 		android:layout_gravity="center_horizontal" android:paddingTop="10px"></ImageView>
 		
 	<TextView android:id="@+id/TextView03" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
 		android:text="@string/info_copyright" android:textColor="@color/lblColor"
 		android:textAppearance="@color/bgrColor" android:textStyle="normal"
+		style="@android:style/TextAppearance.Medium"
 		android:typeface="normal" android:paddingTop="10px" android:paddingBottom="10px"></TextView>
 
 	
@@ -42,6 +45,7 @@
 		android:text="@string/info_license" android:textColor="@color/lblColor"
 		android:textAppearance="@color/bgrColor" android:textStyle="italic"
 		android:typeface="normal" android:paddingTop="10px"
+		style="@android:style/TextAppearance.Medium"
 		android:paddingBottom="20px"></TextView>
 		
 			<Button android:id="@+id/OpenProjectWebsite_Button" android:layout_width="wrap_content"

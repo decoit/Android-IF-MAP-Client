@@ -8,5 +8,23 @@
 		<item>GPS</item>
 		<item>Cellbroadcast</item>
 	</string-array>
+	<string-array name="preferences_display_serverForm">
+		<item>iMonitor</item>
+		<item>SIMU</item>
+	</string-array>
+	<string-array name="preferences_value_serverForm">
+		<item>iMonitor</item>
+		<item>IF-MAP</item>
+	</string-array>
+	<string-array name="preferences_display_cryptForm">
+		<item>None</item>
+		<item>Simple XOR (default)</item>
+		<item>3DES</item>
+	</string-array>
+	<string-array name="preferences_value_cryptForm">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
 	
 </resources>

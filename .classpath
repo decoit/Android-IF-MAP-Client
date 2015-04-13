@@ -3,9 +3,14 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry exported="true" kind="lib" path="lib/httpcore-4.2-alpha2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpcore-4.4.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jackson-annotations-2.5.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jackson-databind-2.5.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jackson-core-2.5.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jsendnsca-2.1-RC1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ifmapj-2.2.1.jar"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry exported="true" kind="lib" path="lib/ifmapj-0.1.4.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
