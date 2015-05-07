@@ -10,3 +10,10 @@ Android-IF-MAP-Client
 =====================
 
 Experimental IF-MAP-Client for Android Devices
+
+Beim Android-IF-MAP-Client handelt es sich um eine App für Android-basierte
+Smartphones, mit deren Hilfe es möglich ist, eine Verbindung (Session) zu einen MAP-
+Server aufzubauen, verschiedene Geräteinformationen des betreffenden Smartphones
+auszulesen und diese an einen MAP-Server zu senden (Publish).
+
+Aktuell funktioniert die App auf Android 4 und 5. Bei weiteren Fragen kontaktieren Sie uns. (info@decoit.de)
